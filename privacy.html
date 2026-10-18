@@ -1,0 +1,1913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="gKRiPti4PTMrZ6z9t9xqRK4ANlUbmuDYFeeg3snKhZE" />
+  <meta name="description" content="Official Privacy Policy and Data Safety Disclosures for HydroGrow - Smart Hydroponics Manager (com.h3dapps.hydrogrow). 100% Offline-First architecture.">
+  <title>Privacy Policy - HydroGrow</title>
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon.png?v=2" />
+  <link rel="shortcut icon" href="favicon.png?v=2" />
+  <link rel="apple-touch-icon" href="transparent_with_arc.png" />
+  <style>
+    :root {
+      --bg: #0B1120;
+      --card-bg: #1E293B;
+      --card-elevated: #243248;
+      --border: #334155;
+      --primary: #22C55E;
+      --primary-hover: #16A34A;
+      --text: #F8FAFC;
+      --text-secondary: #94A3B8;
+      --text-muted: #64748B;
+      --danger: #EF4444;
+      --warning: #F59E0B;
+      --info: #38BDF8;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-pill: 9999px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Navigation Bar */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(11, 17, 32, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .brand-logo {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .brand-name {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--text);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .nav-link {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--primary);
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-pill);
+      padding: 2px;
+      gap: 2px;
+    }
+
+    .lang-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .lang-btn.active {
+      background: var(--primary);
+      color: #0B1120;
+    }
+
+    /* Container */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 40px 20px 80px 20px;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: left;
+      margin-bottom: 36px;
+      padding: 32px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+    }
+
+    .hero-badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+      line-height: 1;
+    }
+
+    .badge-success {
+      background: rgba(34, 197, 94, 0.12);
+      border: 1px solid rgba(34, 197, 94, 0.35);
+      color: var(--primary);
+    }
+
+    .badge-info {
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      color: var(--info);
+    }
+
+    .badge-warning {
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      color: var(--warning);
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -0.8px;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .hero-subtitle {
+      font-size: 16px;
+      color: var(--text-secondary);
+      max-width: 720px;
+      margin-bottom: 20px;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    .meta-item {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .meta-item strong {
+      color: var(--text);
+      font-weight: 600;
+      display: block;
+      margin-top: 2px;
+    }
+
+    /* Table of Contents */
+    .toc {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      margin-bottom: 32px;
+    }
+
+    .toc-title {
+      font-size: 15px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-secondary);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .toc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 8px 16px;
+    }
+
+    .toc-link {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 0;
+      transition: color 0.15s ease;
+    }
+
+    .toc-link:hover {
+      color: var(--primary);
+    }
+
+    .toc-num {
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 12px;
+      min-width: 18px;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      margin-bottom: 24px;
+      scroll-margin-top: 90px;
+      transition: border-color 0.2s ease;
+    }
+
+    .card:hover {
+      border-color: rgba(51, 65, 85, 0.9);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .card-icon {
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      color: var(--text);
+      line-height: 1.3;
+    }
+
+    .card-section-num {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 2px;
+    }
+
+    p {
+      color: var(--text-secondary);
+      font-size: 15px;
+      margin-bottom: 14px;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    ul, ol {
+      color: var(--text-secondary);
+      font-size: 15px;
+      padding-left: 20px;
+      margin-bottom: 14px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    li strong {
+      color: var(--text);
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 13px;
+      background: rgba(11, 17, 32, 0.7);
+      border: 1px solid var(--border);
+      color: var(--primary);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    /* Highlight callout box */
+    .callout {
+      background: rgba(34, 197, 94, 0.06);
+      border: 1px solid rgba(34, 197, 94, 0.25);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      margin: 16px 0;
+    }
+
+    .callout-title {
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .callout p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin-bottom: 0;
+    }
+
+    /* Data Safety Table */
+    .table-container {
+      overflow-x: auto;
+      margin: 18px 0;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      text-align: left;
+    }
+
+    th {
+      background: #131C2E;
+      color: var(--text);
+      font-weight: 700;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-secondary);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .status-pill {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: var(--radius-pill);
+      white-space: nowrap;
+    }
+
+    .pill-green {
+      background: rgba(34, 197, 94, 0.15);
+      color: var(--primary);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+    }
+
+    .pill-blue {
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--info);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+
+    .pill-gray {
+      background: rgba(148, 163, 184, 0.15);
+      color: var(--text-secondary);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--primary);
+      color: #0B1120;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 10px 20px;
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.15s ease, transform 0.1s ease;
+    }
+
+    .btn:hover {
+      background: var(--primary-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: var(--card-elevated);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      background: var(--border);
+    }
+
+    /* Step boxes */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin: 18px 0;
+    }
+
+    .step-box {
+      background: rgba(11, 17, 32, 0.6);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 16px;
+    }
+
+    .step-num {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      background: var(--primary);
+      color: #0B1120;
+      font-weight: 800;
+      font-size: 12px;
+      text-align: center;
+      line-height: 24px;
+      border-radius: var(--radius-pill);
+      margin-bottom: 10px;
+    }
+
+    .step-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .step-desc {
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-bottom: 0;
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 60px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    .footer-links a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-note {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 10px;
+    }
+
+    /* SVG icon utility */
+    .icon {
+      width: 18px;
+      height: 18px;
+      display: inline-block;
+      vertical-align: middle;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* Language content toggle */
+    .lang-content {
+      display: none;
+    }
+
+    .lang-content.active {
+      display: block;
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        padding: 24px 16px 60px 16px;
+      }
+      .hero {
+        padding: 20px;
+      }
+      h1 {
+        font-size: 24px;
+      }
+      .card {
+        padding: 20px;
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand-link">
+        <img src="transparent_with_arc.png" onerror="if(!this.dataset.err){this.dataset.err=1;this.src='logo.png';}else if(this.dataset.err==1){this.dataset.err=2;this.src='favicon.png';}" alt="HydroGrow" class="brand-logo">
+        <span class="brand-name">HydroGrow</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="privacy.html" class="nav-link active">Privacy Policy</a>
+        <a href="deletion.html" class="nav-link">Data Deletion</a>
+        <a href="terms.html" class="nav-link">Terms (EULA)</a>
+      </div>
+
+      <div class="lang-switcher">
+        <button class="lang-btn active" onclick="switchLang('en')">EN</button>
+        <button class="lang-btn" onclick="switchLang('cs')">CS</button>
+        <button class="lang-btn" onclick="switchLang('de')">DE</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <!-- ENGLISH VERSION -->
+    <div id="content-en" class="lang-content active">
+
+      <!-- Hero Header -->
+      <header class="hero">
+                <div class="hero-badge-row">
+          <span class="badge badge-success">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            100% Offline-First
+          </span>
+          <span class="badge badge-info">
+            <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            Google Play Verified
+          </span>
+        </div>
+
+        <h1>Privacy Policy & Data Safety</h1>
+        <p class="hero-subtitle">
+          Official Privacy Policy and Data Safety Disclosures for HydroGrow - Smart Hydroponics Manager (package: <code>com.h3dapps.hydrogrow</code>).
+        </p>
+
+        <div class="meta-grid">
+          <div class="meta-item">
+            Effective Date
+            <strong>October 18, 2026</strong>
+          </div>
+          <div class="meta-item">
+            Architecture
+            <strong>100% Offline-First</strong>
+          </div>
+          <div class="meta-item">
+            Developer / Entity
+            <strong>H3DApps (Jiří Herman)</strong>
+          </div>
+          <div class="meta-item">
+            Contact Email
+            <strong>h3dindustry@gmail.com</strong>
+          </div>
+        </div>
+      </header>
+
+      <!-- Table of Contents -->
+      <nav class="toc">
+        <div class="toc-title">
+          <svg class="icon" viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+          Quick Navigation
+        </div>
+        <div class="toc-grid">
+          <a href="#section-1" class="toc-link"><span class="toc-num">1.</span> Core Architecture & Zero Data Collection</a>
+          <a href="#section-2" class="toc-link"><span class="toc-num">2.</span> Device Permissions & Purpose</a>
+          <a href="#section-3" class="toc-link"><span class="toc-num">3.</span> Optional Google Drive Backup</a>
+          <a href="#section-4" class="toc-link"><span class="toc-num">4.</span> Google Play Billing (PRO Purchases)</a>
+          <a href="#section-5" class="toc-link"><span class="toc-num">5.</span> Data Safety Summary Matrix</a>
+          <a href="#section-6" class="toc-link"><span class="toc-num">6.</span> Data Retention & Deletion Policy</a>
+          <a href="#section-7" class="toc-link"><span class="toc-num">7.</span> Children's Privacy (COPPA/GDPR-K)</a>
+          <a href="#section-8" class="toc-link"><span class="toc-num">8.</span> Third-Party Services</a>
+          <a href="#section-9" class="toc-link"><span class="toc-num">9.</span> Developer Contact Information</a>
+        </div>
+      </nav>
+
+      <!-- Section 1 -->
+      <section id="section-1" class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+          </div>
+          <div>
+            <div class="card-section-num">Section 1</div>
+            <h2>Core Architecture: 100% Offline-First & Zero Data Collection</h2>
+          </div>
+        </div>
+
+        <p>
+          HydroGrow ("the Application", package identifier <code>com.h3dapps.hydrogrow</code>) is built from the ground up on a strict <strong>Offline-First Privacy Architecture</strong>. We believe that your cultivation data, botanical research, and greenhouse schedules belong exclusively to you.
+        </p>
+
+        <p>
+          All data generated during your use of the Application - including grow cycles, botanical plant varieties, stages, journal notes, plant photographs, reservoir sensor records (pH, EC, PPM, water levels, water and air temperatures, humidity), nutrient formulations, dosing calculations, and custom user templates - is saved exclusively in a private, sandboxed SQLite database on your local device.
+        </p>
+
+        <div class="callout">
+          <div class="callout-title">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            Our Privacy Guarantee
+          </div>
+          <p>
+            The Application operates <strong>zero tracking servers</strong>, collects <strong>no user activity data or analytics</strong>, embeds <strong>no advertising SDKs</strong>, utilizes <strong>no tracking cookies or user identification tags</strong>, and never sells, rents, or discloses personal or device information to third parties.
+          </p>
+        </div>
+      </section>
+
+
+        <div class="callout" style="background: rgba(34, 197, 94, 0.08); border-color: rgba(34, 197, 94, 0.3);">
+          <div class="callout-title" style="color: var(--primary);">User Support &amp; In-App Feedback Inquiries</div>
+          <p>
+            If you voluntarily submit a bug report, crash log, or feature request through the in-app feedback modal or via email, your provided contact email address and optional device diagnostic parameters (Android OS version, device model, app version) are used strictly to investigate and resolve your reported issue. Support communications are never shared with third parties or used for marketing.
+          </p>
+        </div>
+      <!-- Section 2 -->
+      <section id="section-2" class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          </div>
+          <div>
+            <div class="card-section-num">Section 2</div>
+            <h2>Android Device Permissions & Explicit Purposes</h2>
+          </div>
+        </div>
+
+        <p>
+          The Application requests only standard Android permissions strictly necessary for user-initiated core features. No permission is ever used for background tracking or advertising:
+        </p>
+
+        <ul>
+          <li>
+            <strong>Camera (<code>android.permission.CAMERA</code>):</strong>
+            Requested exclusively when you choose to take a photo of your plants, root systems, or harvest directly in the Journal tab. Captured photos are saved solely within your device's private application storage.
+          </li>
+          <li>
+            <strong>Photo Library (<code>android.permission.READ_MEDIA_IMAGES</code>):</strong>
+            Requested only when you choose to import an existing photo from your device's photo gallery into a plant log entry.
+          </li>
+          <li>
+            <strong>Notifications (<code>android.permission.POST_NOTIFICATIONS</code>):</strong>
+            Used exclusively for scheduling local, on-device reminder alerts for upcoming water changes, reservoir top-ups, and solution health warnings. All notifications are created and triggered locally by the Android operating system on your phone; no remote push notification server is involved.
+          </li>
+          <li>
+            <strong>Reboot Handling (<code>android.permission.RECEIVE_BOOT_COMPLETED</code>):</strong>
+            Permits the Application to automatically re-register your scheduled local water change and reservoir check reminders whenever your device restarts.
+          </li>
+          <li>
+            <strong>Haptics (<code>android.permission.VIBRATE</code>):</strong>
+            Provides subtle tactile vibration feedback for button taps, slider adjustments, and alarm signals.
+          </li>
+          <li>
+            <strong>In-App Purchases (<code>com.android.vending.BILLING</code>):</strong>
+            Enables processing of HydroGrow PRO lifetime licenses or subscriptions via Google Play In-App Billing.
+          </li>
+          <li>
+            <strong>Network Access (<code>android.permission.INTERNET</code> & <code>ACCESS_NETWORK_STATE</code>):</strong>
+            Used exclusively for two user-directed operations: (1) Google Play license verification for PRO features, and (2) Optional, user-initiated backup uploads and downloads to your personal Google Drive via direct encrypted HTTPS (TLS 1.3).
+          </li>
+        </ul>
+      </section>
+
+      <!-- Section 3 -->
+      <section id="section-3" class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+          </div>
+          <div>
+            <div class="card-section-num">Section 3</div>
+            <h2>Optional Google Drive Cloud Backup & Limited Use Policy</h2>
+          </div>
+        </div>
+
+        <p>
+          HydroGrow includes an optional, user-initiated cloud backup feature powered by the official Google Drive API. Connecting a Google account is completely optional; all core features of HydroGrow remain fully functional in 100% offline mode.
+        </p>
+
+        <ul>
+          <li>
+            <strong>Restricted OAuth Scope:</strong> The Application requests strictly the <code>https://www.googleapis.com/auth/drive.file</code> scope.
+          </li>
+          <li>
+            <strong>Zero Access to Personal Files:</strong> Under this restricted scope, HydroGrow has access ONLY to files created by HydroGrow itself within its dedicated <code>HydroGrow Backups</code> folder. The Application has <strong>zero access</strong> to your personal files, photos, sheets, or any other folders on your Google Drive.
+          </li>
+          <li>
+            <strong>Direct Encrypted Transfer:</strong> Encrypted backup packages (<code>.hydro</code> format) are transferred directly between your mobile device and Google's official API servers over secure HTTPS (TLS 1.3). No intermediate developer server, proxy, or relay is involved.
+          </li>
+          <li>
+            <strong>Google API Limited Use Disclosure:</strong> HydroGrow's use and transfer of information received from Google APIs to any other app will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener" style="color: var(--primary);">Google API Services User Data Policy</a>, including the Limited Use requirements.
+          </li>
+          <li>
+            <strong>Revocation & Disconnection:</strong> You can disconnect your Google account at any time in the Application's Backup Center. Disconnecting immediately removes all cached OAuth access tokens and credentials from your local device.
+          </li>
+        </ul>
+      </section>
+
+      <!-- Section 4 -->
+      <section id="section-4" class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+          </div>
+          <div>
+            <div class="card-section-num">Section 4</div>
+            <h2>Google Play In-App Billing (PRO Upgrades)</h2>
+          </div>
+        </div>
+
+        <p>
+          HydroGrow offers optional PRO upgrades (lifetime license or subscription) providing extended plant slots, advanced nutrient calibration laboratories, and automated cloud sync.
+        </p>
+        <p>
+          All monetary transactions, payment processing, credit card details, and billing operations are handled exclusively by the <strong>Google Play Billing system</strong>. HydroGrow never collects, transmits, or stores credit card numbers, bank account details, billing addresses, or financial records. All purchases are governed by the Google Play Terms of Service.
+        </p>
+      </section>
+
+      <!-- Section 5 -->
+      <section id="section-5" class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          </div>
+          <div>
+            <div class="card-section-num">Section 5</div>
+            <h2>Google Play Data Safety Summary Matrix</h2>
+          </div>
+        </div>
+
+        <p>
+          In accordance with Google Play's Data Safety declaration requirements, the following table summarizes all data types and handling practices:
+        </p>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Data Category</th>
+                <th>Collected?</th>
+                <th>Shared?</th>
+                <th>Processed / Stored</th>
+                <th>User Deletion</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Personal Info</strong> (Name, Email, Phone, Address)</td>
+                <td><span class="status-pill pill-green">NO</span></td>
+                <td><span class="status-pill pill-green">NO</span></td>
+                <td>Not collected</td>
+                <td>N/A</td>
+              </tr>
+              <tr>
+                <td><strong>Location Data</strong> (GPS / Network)</td>
+                <td><span class="status-pill pill-green">NO</span></td>
+                <td><span class="status-pill pill-green">NO</span></td>
+                <td>Not collected</td>
+                <td>N/A</td>
+              </tr>
+              <tr>
+                <td><strong>Financial Info</strong> (Credit card, Bank accounts)</td>
+                <td><span class="status-pill pill-green">NO</span></td>
+                <td><span class="status-pill pill-green">NO</span></td>
+                <td>Processed solely by Google Play Billing</td>
+                <td>Google Play account</td>
+              </tr>
+              <tr>
+                <td><strong>Photos & Images</strong> (Plant / journal photos)</td>
+                <td><span class="status-pill pill-blue">OPTIONAL</span></td>
+                <td><span class="status-pill pill-green">NO</span></td>
+                <td>Stored 100% locally on device</td>
+                <td>In-app delete / Reset</td>
+              </tr>
+              <tr>
+                <td><strong>App Activity & Diagnostics</strong> (Analytics, crashes)</td>
+                <td><span class="status-pill pill-green">NO</span></td>
+                <td><span class="status-pill pill-green">NO</span></td>
+                <td>No third-party trackers or SDKs</td>
+                <td>N/A</td>
+              </tr>
+              <tr>
+                <td><strong>Cultivation & Sensor Data</strong> (pH, EC, logs)</td>
+                <td><span class="status-pill pill-blue">LOCAL ONLY</span></td>
+                <td><span class="status-pill pill-green">NO</span></td>
+                <td>Local SQLite database sandbox</td>
+                <td>In-app Factory Reset</td>
+              </tr>
+              <tr>
+                <td><strong>Cloud Backup Archive</strong> (Encrypted .hydro)</td>
+                <td><span class="status-pill pill-blue">USER CHOICE</span></td>
+                <td><span class="status-pill pill-green">NO</span></td>
+                <td>User's private Google Drive storage</td>
+                <td>Google Drive delete</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section 6 -->
+      <section id="section-6" class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
+          </div>
+          <div>
+            <div class="card-section-num">Section 6</div>
+            <h2>Data Retention & User Deletion Policy (GDPR / CCPA)</h2>
+          </div>
+        </div>
+
+        <p>
+          You retain complete ownership and control over your data at all times. Because we store zero data on external servers, you do not need to submit requests to delete your personal profiles from a central database.
+        </p>
+
+        <p>You can delete all application data through the following straightforward options:</p>
+
+        <div class="steps-grid">
+          <div class="step-box">
+            <div class="step-num">1</div>
+            <div class="step-title">In-App Factory Reset</div>
+            <p class="step-desc">
+              Open <strong>Settings &gt; Factory Reset</strong>. This permanently and irrevocably deletes the SQLite database, all plant entries, history charts, and local photos.
+            </p>
+          </div>
+          <div class="step-box">
+            <div class="step-num">2</div>
+            <div class="step-title">Google Drive Cleanup</div>
+            <p class="step-desc">
+              Open your Google Drive app or web interface, locate the <code>HydroGrow Backups</code> folder, and delete the <code>.hydro</code> backup archives.
+            </p>
+          </div>
+          <div class="step-box">
+            <div class="step-num">3</div>
+            <div class="step-title">Uninstall Application</div>
+            <p class="step-desc">
+              Uninstalling HydroGrow from your Android device immediately purges the Application's private sandboxed database and all local cache files.
+            </p>
+          </div>
+        </div>
+
+        <p>
+          For full step-by-step guidance on account and data deletion, visit our dedicated <a href="deletion.html" style="color: var(--primary); font-weight: 600;">Data Deletion Guide</a>.
+        </p>
+      </section>
+
+      <!-- Section 7 -->
+      <section id="section-7" class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+          </div>
+          <div>
+            <div class="card-section-num">Section 7</div>
+            <h2>Children's Privacy Protection (COPPA / GDPR-K)</h2>
+          </div>
+        </div>
+
+        <p>
+          HydroGrow is an agricultural and hydroponic management utility intended for adult growers, educators, and gardening enthusiasts. The Application is not directed toward children under 13 years of age (or under 16 years of age in the European Union).
+        </p>
+        <p>
+          Because the Application collects zero personal information, we do not knowingly collect, store, or solicit personal data from children. If you believe a child has provided personal information to us, please contact us at <code>h3dindustry@gmail.com</code> and we will take immediate steps to address the concern.
+        </p>
+      </section>
+
+      <!-- Section 8 -->
+      <section id="section-8" class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+          </div>
+          <div>
+            <div class="card-section-num">Section 8</div>
+            <h2>Third-Party Services & Links</h2>
+          </div>
+        </div>
+
+        <p>
+          The Application interacts with third-party service providers solely for distribution, billing, and optional cloud backups:
+        </p>
+
+        <ul>
+          <li>
+            <strong>Google Play Services & Billing:</strong> App delivery, updates, and in-app purchase verification.
+            <br>
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color: var(--primary);">Google Privacy Policy</a> |
+            <a href="https://payments.google.com/terms" target="_blank" rel="noopener" style="color: var(--primary);">Google Payments Terms</a>
+          </li>
+          <li>
+            <strong>Google Drive API:</strong> Optional user-directed cloud backups.
+            <br>
+            <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener" style="color: var(--primary);">Google API Services User Data Policy</a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Section 9 -->
+      <section id="section-9" class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          </div>
+          <div>
+            <div class="card-section-num">Section 9</div>
+            <h2>Developer & Data Controller Contact Information</h2>
+          </div>
+        </div>
+
+        <p>
+          If you have questions, inquiries, or feedback regarding this Privacy Policy or your data privacy, please contact the developer directly:
+        </p>
+
+        <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 18px; margin: 16px 0;">
+          <p style="margin-bottom: 6px;"><strong>Developer / Publisher:</strong> H3DApps (Jiří Herman)</p>
+          <p style="margin-bottom: 6px;"><strong>Application:</strong> HydroGrow - Smart Hydroponics Manager</p>
+          <p style="margin-bottom: 6px;"><strong>Package Name:</strong> <code>com.h3dapps.hydrogrow</code></p>
+          <p style="margin-bottom: 6px;"><strong>Location:</strong> Czech Republic, European Union</p>
+          <p style="margin-bottom: 0;"><strong>Direct Contact:</strong> <a href="mailto:h3dindustry@gmail.com" style="color: var(--primary); font-weight: 600;">h3dindustry@gmail.com</a></p>
+        </div>
+
+        <p style="font-size: 13px; color: var(--text-muted); margin-top: 14px;">
+          We respond to all verified inquiries within 30 days in full compliance with European Union GDPR requirements.
+        </p>
+      </section>
+
+    </div>
+
+    <!-- CZECH VERSION -->
+    <div id="content-cs" class="lang-content">
+
+      <!-- Hero Header -->
+      <header class="hero">
+                <div class="hero-badge-row">
+          <span class="badge badge-success">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            100% Offline-First
+          </span>
+          <span class="badge badge-info">
+            <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            Ověřeno pro Google Play
+          </span>
+        </div>
+
+        <h1>Zásady ochrany osobních údajů</h1>
+        <p class="hero-subtitle">
+          Oficiální prohlášení o ochraně soukromí a bezpečnosti dat pro aplikaci HydroGrow - Smart Hydroponics Manager (balíček: <code>com.h3dapps.hydrogrow</code>).
+        </p>
+
+        <div class="meta-grid">
+          <div class="meta-item">
+            Datum účinnosti
+            <strong>18. října 2026</strong>
+          </div>
+          <div class="meta-item">
+            Architektura
+            <strong>100% Offline-First</strong>
+          </div>
+          <div class="meta-item">
+            Vývojář / Subjekt
+            <strong>H3DApps (Jiří Herman)</strong>
+          </div>
+          <div class="meta-item">
+            Kontaktní e-mail
+            <strong>h3dindustry@gmail.com</strong>
+          </div>
+        </div>
+      </header>
+
+      <!-- Table of Contents CS -->
+      <nav class="toc">
+        <div class="toc-title">
+          <svg class="icon" viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+          Rychlá navigace
+        </div>
+        <div class="toc-grid">
+          <a href="#section-1-cs" class="toc-link"><span class="toc-num">1.</span> Architektura a nulový sběr dat</a>
+          <a href="#section-2-cs" class="toc-link"><span class="toc-num">2.</span> Oprávnění zařízení Android</a>
+          <a href="#section-3-cs" class="toc-link"><span class="toc-num">3.</span> Volitelná záloha na Google Disk</a>
+          <a href="#section-4-cs" class="toc-link"><span class="toc-num">4.</span> Fakturace Google Play (Nákupy PRO)</a>
+          <a href="#section-5-cs" class="toc-link"><span class="toc-num">5.</span> Přehledová matice bezpečnosti dat</a>
+          <a href="#section-6-cs" class="toc-link"><span class="toc-num">6.</span> Uchovávání a zásady mazání údajů</a>
+          <a href="#section-7-cs" class="toc-link"><span class="toc-num">7.</span> Ochrana soukromí dětí (COPPA/GDPR-K)</a>
+          <a href="#section-8-cs" class="toc-link"><span class="toc-num">8.</span> Služby třetích stran a odkazy</a>
+          <a href="#section-9-cs" class="toc-link"><span class="toc-num">9.</span> Kontaktní informace správce</a>
+        </div>
+      </nav>
+
+      <!-- Section 1 CS -->
+      <section id="section-1-cs" class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+          </div>
+          <div>
+            <div class="card-section-num">Sekce 1</div>
+            <h2>Architektura: 100% Offline-First a nulový sběr dat</h2>
+          </div>
+        </div>
+
+        <p>
+          Aplikace HydroGrow (identifikátor balíčku <code>com.h3dapps.hydrogrow</code>) je od základu postavena na striktní architektuře <strong>Offline-First</strong>. Jsme přesvědčeni, že vaše pěstitelská data, botanické poznámky a deníky patří výhradně vám.
+        </p>
+
+        <p>
+          Veškerá data generovaná během používání aplikace - včetně pěstebních cyklů, profilů rostlin, fází růstu, deníkových zápisků, fotografií rostlin a kořenů, naměřených senzorových hodnot nádrže (pH, EC, PPM, hladina vody, teplota roztoku a okolí, vlhkost), výpočtů živin a vlastních šablon - jsou uložena výhradně v zabezpečené lokální SQLite databázi přímo na vašem zařízení.
+        </p>
+
+        <div class="callout">
+          <div class="callout-title">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            Záruka soukromí
+          </div>
+          <p>
+            Aplikace <strong>neprovozuje žádné sledovací servery</strong>, neshromažďuje <strong>žádná data o vašem chování ani analytiku</strong>, neobsahuje <strong>žádné reklamní SDK sítě</strong>, nevyužívá <strong>žádné sledovací cookies ani identifikační štítky uživatele</strong> a nikdy neprodává, nepronajímá ani nepředává osobní či provozní údaje třetím stranám.
+          </p>
+        </div>
+      </section>
+
+
+        <div class="callout" style="background: rgba(34, 197, 94, 0.08); border-color: rgba(34, 197, 94, 0.3);">
+          <div class="callout-title" style="color: var(--primary);">Uživatelská podpora a hlášení chyb v aplikaci</div>
+          <p>
+            Pokud dobrovolně odešlete hlášení chyby nebo návrh na vylepšení prostřednictvím formuláře v aplikaci nebo e-mailem, vámi zadaná e-mailová adresa a volitelné technické parametry (verze Androidu, model zařízení, sestavení aplikace) slouží výhradně k vyřešení nahlášeného problému. Tyto údaje nejsou nikdy sdíleny se třetími stranami ani využívány pro marketingové účely.
+          </p>
+        </div>
+      <!-- Section 2 CS -->
+      <section id="section-2-cs" class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          </div>
+          <div>
+            <div class="card-section-num">Sekce 2</div>
+            <h2>Oprávnění zařízení Android a jejich výslovný účel</h2>
+          </div>
+        </div>
+
+        <p>
+          Aplikace požaduje pouze standardní systémová oprávnění Android, která jsou bezpodmínečně nutná pro funkce iniciované uživatelem. Žádné oprávnění není nikdy využíváno pro sledování na pozadí ani pro reklamu:
+        </p>
+
+        <ul>
+          <li>
+            <strong>Fotoaparát (<code>android.permission.CAMERA</code>):</strong>
+            Vyžaduje se výhradně tehdy, když se rozhodnete pořídit fotografii rostliny, kořenového systému nebo sklizně přímo v záložce Deník. Pořízené fotografie jsou ukládány výhradně do interního úložiště aplikace na vašem zařízení.
+          </li>
+          <li>
+            <strong>Přístup ke galerii (<code>android.permission.READ_MEDIA_IMAGES</code>):</strong>
+            Požaduje se pouze v případě, že se rozhodnete vybrat existující fotografii z galerie telefonu a přiřadit ji k záznamu rostliny.
+          </li>
+          <li>
+            <strong>Oznámení (<code>android.permission.POST_NOTIFICATIONS</code>):</strong>
+            Slouží výhradně k plánování lokálních upozornění na plánovanou výměnu vody, dolití nádrže a varování při biologickém výkyvu pH či EC. Všechna oznámení jsou vytvářena a spouštěna lokálně operačním systémem Android přímo v telefonu; není zapojen žádný vzdálený push notifikační server.
+          </li>
+          <li>
+            <strong>Obnova po restartu (<code>android.permission.RECEIVE_BOOT_COMPLETED</code>):</strong>
+            Umožňuje aplikaci automaticky obnovit naplánovaná lokální připomenutí péče o nádrž po restartu zařízení.
+          </li>
+          <li>
+            <strong>Vibrace (<code>android.permission.VIBRATE</code>):</strong>
+            Zajišťuje jemnou haptickou odezvu při stisku tlačítek a při bezpečnostních výstrahách.
+          </li>
+          <li>
+            <strong>Nákupy v aplikaci (<code>com.android.vending.BILLING</code>):</strong>
+            Umožňuje bezpečné zpracování celoživotní licence nebo předplatného HydroGrow PRO prostřednictvím oficiálního rozhraní Google Play In-App Billing.
+          </li>
+          <li>
+            <strong>Přístup k síti (<code>android.permission.INTERNET</code> &amp; <code>ACCESS_NETWORK_STATE</code>):</strong>
+            Používá se výhradně pro dvě operace řízené uživatelem: (1) Ověření stavu licence PRO přes rozhraní Google Play a (2) Volitelné zálohování či obnovení dat z vašeho osobního Google Disku přes přímé šifrované spojení HTTPS (TLS 1.3).
+          </li>
+        </ul>
+      </section>
+
+      <!-- Section 3 CS -->
+      <section id="section-3-cs" class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+          </div>
+          <div>
+            <div class="card-section-num">Sekce 3</div>
+            <h2>Volitelná záloha na Google Disk &amp; Zásady Google API</h2>
+          </div>
+        </div>
+
+        <p>
+          HydroGrow obsahuje volitelnou, uživatelem iniciovanou funkci cloudového zálohování prostřednictvím oficiálního rozhraní Google Drive API. Připojení účtu Google je zcela dobrovolné; veškeré základní funkce aplikace zůstávají plně funkční i ve 100% offline režimu.
+        </p>
+
+        <ul>
+          <li>
+            <strong>Restriktivní rozsah oprávnění OAuth:</strong> Aplikace žádá striktně pouze o rozsah <code>https://www.googleapis.com/auth/drive.file</code>.
+          </li>
+          <li>
+            <strong>Žádný přístup k soukromým souborům:</strong> V rámci tohoto omezeného rozsahu má HydroGrow přístup POUZE k souborům, které sama vytvořila ve své vyhrazené složce <code>HydroGrow Backups</code>. Aplikace nemá <strong>žádný přístup</strong> k vašim soukromým dokumentům, tabulkám, fotkám ani žádným jiným složkám na Disku Google.
+          </li>
+          <li>
+            <strong>Přímý šifrovaný přenos:</strong> Šifrované záložní archivy (formát <code>.hydro</code>) jsou přenášeny přímo mezi vaším telefonem a servery společnosti Google přes bezpečný protokol HTTPS (TLS 1.3). Není využíván žádný prostřední server vývojáře, proxy ani relé.
+          </li>
+          <li>
+            <strong>Soulad se zásadami pro data uživatelů služeb Google API:</strong> Využití informací získaných z rozhraní Google API a jejich přenos do jiných aplikací se řídí <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener" style="color: var(--primary);">Zásadami pro data uživatelů služeb Google API</a> včetně požadavků na omezené použití.
+          </li>
+          <li>
+            <strong>Odpojení účtu a smazání přístupových tokenů:</strong> Propojení s účtem Google můžete kdykoliv zrušit v Centru zálohování aplikace, což okamžitě smaže veškeré uložené přístupové tokeny ze zařízení.
+          </li>
+        </ul>
+      </section>
+
+      <!-- Section 4 CS -->
+      <section id="section-4-cs" class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+          </div>
+          <div>
+            <div class="card-section-num">Sekce 4</div>
+            <h2>Fakturace Google Play (Nákupy PRO)</h2>
+          </div>
+        </div>
+
+        <p>
+          Aplikace HydroGrow nabízí volitelné rozšíření PRO (celoživotní licenci nebo předplatné), které umožňuje neomezený počet rostlin, pokročilou analytickou laboratoř a automatickou cloudovou synchronizaci.
+        </p>
+        <p>
+          Veškeré platební transakce, zpracování platebních karet a účtování probíhají výhradně přes <strong>oficiální platební systém Google Play</strong>. HydroGrow nikdy neshromažďuje, nepřenáší ani neukládá čísla platebních karet, bankovní účty, fakturační adresy ani finanční záznamy. Všechny nákupy se řídí Podmínkami služby Google Play.
+        </p>
+      </section>
+
+      <!-- Section 5 CS -->
+      <section id="section-5-cs" class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          </div>
+          <div>
+            <div class="card-section-num">Sekce 5</div>
+            <h2>Přehledová matice bezpečnosti dat pro Google Play</h2>
+          </div>
+        </div>
+
+        <p>
+          V souladu s požadavky deklarace bezpečnosti dat na Google Play uvádí následující tabulka souhrn všech kategorií dat a způsoby nakládání s nimi:
+        </p>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Kategorie dat</th>
+                <th>Sbírá se?</th>
+                <th>Sdílí se?</th>
+                <th>Zpracování / Uložení</th>
+                <th>Možnost smazání</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Osobní údaje</strong> (Jméno, e-mail, telefon, adresa)</td>
+                <td><span class="status-pill pill-green">NE</span></td>
+                <td><span class="status-pill pill-green">NE</span></td>
+                <td>Neshromažďuje se</td>
+                <td>Není relevantní</td>
+              </tr>
+              <tr>
+                <td><strong>Údaje o poloze</strong> (GPS / Síť)</td>
+                <td><span class="status-pill pill-green">NE</span></td>
+                <td><span class="status-pill pill-green">NE</span></td>
+                <td>Neshromažďuje se</td>
+                <td>Není relevantní</td>
+              </tr>
+              <tr>
+                <td><strong>Finanční informace</strong> (Kreditní karty, účty)</td>
+                <td><span class="status-pill pill-green">NE</span></td>
+                <td><span class="status-pill pill-green">NE</span></td>
+                <td>Zpracováno výhradně přes Google Play Billing</td>
+                <td>Účet Google Play</td>
+              </tr>
+              <tr>
+                <td><strong>Fotografie a obrázky</strong> (Fotografie rostlin a deníku)</td>
+                <td><span class="status-pill pill-blue">VOLITELNÉ</span></td>
+                <td><span class="status-pill pill-green">NE</span></td>
+                <td>Uloženo 100% lokálně v zařízení</td>
+                <td>Smazání v aplikaci / Reset</td>
+              </tr>
+              <tr>
+                <td><strong>Aktivita v aplikaci &amp; diagnostika</strong> (Analytika, pády)</td>
+                <td><span class="status-pill pill-green">NE</span></td>
+                <td><span class="status-pill pill-green">NE</span></td>
+                <td>Žádné sledovací nástroje ani SDK třetích stran</td>
+                <td>Není relevantní</td>
+              </tr>
+              <tr>
+                <td><strong>Pěstitelská &amp; senzorová data</strong> (pH, EC, záznamy)</td>
+                <td><span class="status-pill pill-blue">POUZE LOKÁLNĚ</span></td>
+                <td><span class="status-pill pill-green">NE</span></td>
+                <td>Lokální sandbox SQLite databáze</td>
+                <td>Tovární reset v aplikaci</td>
+              </tr>
+              <tr>
+                <td><strong>Archiv zálohy v cloudu</strong> (Šifrovaný .hydro)</td>
+                <td><span class="status-pill pill-blue">VOLBA UŽIVATELE</span></td>
+                <td><span class="status-pill pill-green">NE</span></td>
+                <td>Vlastní soukromé úložiště Google Disk uživatele</td>
+                <td>Smazání na Google Disku</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section 6 CS -->
+      <section id="section-6-cs" class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
+          </div>
+          <div>
+            <div class="card-section-num">Sekce 6</div>
+            <h2>Uchovávání a zásady mazání údajů (GDPR / CCPA)</h2>
+          </div>
+        </div>
+
+        <p>
+          Nad svými daty máte za všech okolností plnou kontrolu a vlastnictví. Jelikož neukládáme žádná data na externích serverech, nemusíte žádat o výmaz svých profilů z centrální databáze.
+        </p>
+
+        <p>Veškerá data aplikace můžete kdykoliv trvale smazat pomocí následujících kroků:</p>
+
+        <div class="steps-grid">
+          <div class="step-box">
+            <div class="step-num">1</div>
+            <div class="step-title">Tovární reset v aplikaci</div>
+            <p class="step-desc">
+              Přejděte do <strong>Nastavení &gt; Tovární reset</strong>. Tím trvale a nevratně vymažete SQLite databázi, profily rostlin, historii měření i lokální fotografie.
+            </p>
+          </div>
+          <div class="step-box">
+            <div class="step-num">2</div>
+            <div class="step-title">Smazání ze zálohy na Disku</div>
+            <p class="step-desc">
+              Otevřete aplikaci Google Disk, vyhledejte vyhrazenou složku <code>HydroGrow Backups</code> a jednoduše odstraňte záložní archivy <code>.hydro</code>.
+            </p>
+          </div>
+          <div class="step-box">
+            <div class="step-num">3</div>
+            <div class="step-title">Odinstalace aplikace</div>
+            <p class="step-desc">
+              Odinstalováním aplikace HydroGrow ze zařízení Android systém okamžitě a bezpečně odstraní interní databázi i veškeré soubory mezipaměti.
+            </p>
+          </div>
+        </div>
+
+        <p>
+          Podrobný návod krok za krokem naleznete v našem specializovaném <a href="deletion.html" style="color: var(--primary); font-weight: 600;">Průvodci smazáním dat</a>.
+        </p>
+      </section>
+
+      <!-- Section 7 CS -->
+      <section id="section-7-cs" class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+          </div>
+          <div>
+            <div class="card-section-num">Sekce 7</div>
+            <h2>Ochrana soukromí dětí (COPPA / GDPR-K)</h2>
+          </div>
+        </div>
+
+        <p>
+          Aplikace HydroGrow je pěstitelský a agronomický nástroj určený dospělým pěstitelům, zahrádkářům a zájemcům o hydroponii. Aplikace není cílena na děti mladší 13 let (v Evropské unii mladší 16 let).
+        </p>
+        <p>
+          Vzhledem k tomu, že aplikace neshromažďuje žádné osobní údaje, vědomě nezískáváme, neukládáme ani nevyžadujeme osobní data od dětí. Pokud máte podezření, že nám dítě poskytlo osobní údaje, kontaktujte nás na adrese <code>h3dindustry@gmail.com</code> a my neprodleně podnikneme příslušné kroky.
+        </p>
+      </section>
+
+      <!-- Section 8 CS -->
+      <section id="section-8-cs" class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+          </div>
+          <div>
+            <div class="card-section-num">Sekce 8</div>
+            <h2>Služby třetích stran a odkazy</h2>
+          </div>
+        </div>
+
+        <p>
+          Aplikace komunikuje se službami třetích stran výhradně za účelem distribuce, fakturace a volitelného cloudového zálohování:
+        </p>
+
+        <ul>
+          <li>
+            <strong>Služby Google Play a fakturace:</strong> Distribuce aplikace, aktualizace a ověřování nákupů v aplikaci.
+            <br>
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color: var(--primary);">Zásady ochrany soukromí Google</a> |
+            <a href="https://payments.google.com/terms" target="_blank" rel="noopener" style="color: var(--primary);">Podmínky služby Google Payments</a>
+          </li>
+          <li>
+            <strong>Google Drive API:</strong> Volitelná, uživatelem spouštěná záloha na Disk Google.
+            <br>
+            <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener" style="color: var(--primary);">Zásady pro data uživatelů služeb Google API</a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Section 9 CS -->
+      <section id="section-9-cs" class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          </div>
+          <div>
+            <div class="card-section-num">Sekce 9</div>
+            <h2>Kontaktní informace správce</h2>
+          </div>
+        </div>
+
+        <p>
+          Máte-li jakékoliv dotazy, podněty nebo připomínky týkající se těchto Zásad ochrany osobních údajů nebo zabezpečení dat, kontaktujte přímo vývojáře:
+        </p>
+
+        <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 18px; margin: 16px 0;">
+          <p style="margin-bottom: 6px;"><strong>Vývojář / Vydavatel:</strong> H3DApps (Jiří Herman)</p>
+          <p style="margin-bottom: 6px;"><strong>Aplikace:</strong> HydroGrow - Smart Hydroponics Manager</p>
+          <p style="margin-bottom: 6px;"><strong>Balíček:</strong> <code>com.h3dapps.hydrogrow</code></p>
+          <p style="margin-bottom: 6px;"><strong>Sídlo:</strong> Česká republika, Evropská unie</p>
+          <p style="margin-bottom: 0;"><strong>E-mail:</strong> <a href="mailto:h3dindustry@gmail.com" style="color: var(--primary); font-weight: 600;">h3dindustry@gmail.com</a></p>
+        </div>
+
+        <p style="font-size: 13px; color: var(--text-muted); margin-top: 14px;">
+          Na veškeré oprávněné dotazy odpovídáme do 30 dnů v plném souladu s požadavky evropského nařízení GDPR.
+        </p>
+      </section>
+
+    </div>
+
+    <!-- GERMAN VERSION -->
+    <div id="content-de" class="lang-content">
+
+      <!-- Hero Header -->
+      <header class="hero">
+                <div class="hero-badge-row">
+          <span class="badge badge-success">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            100% Offline-First
+          </span>
+          <span class="badge badge-info">
+            <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            Google Play verifiziert
+          </span>
+        </div>
+
+        <h1>Datenschutzerklärung</h1>
+        <p class="hero-subtitle">
+          Offizielle Datenschutzerklärung und Sicherheitsangaben für HydroGrow - Smart Hydroponics Manager (Paket: <code>com.h3dapps.hydrogrow</code>).
+        </p>
+
+        <div class="meta-grid">
+          <div class="meta-item">
+            Gültig ab
+            <strong>18. Oktober 2026</strong>
+          </div>
+          <div class="meta-item">
+            Architektur
+            <strong>100% Offline-First</strong>
+          </div>
+          <div class="meta-item">
+            Entwickler
+            <strong>H3DApps (Jiří Herman)</strong>
+          </div>
+          <div class="meta-item">
+            Kontakt-E-Mail
+            <strong>h3dindustry@gmail.com</strong>
+          </div>
+        </div>
+      </header>
+
+      <!-- Table of Contents DE -->
+      <nav class="toc">
+        <div class="toc-title">
+          <svg class="icon" viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+          Schnellnavigation
+        </div>
+        <div class="toc-grid">
+          <a href="#section-1-de" class="toc-link"><span class="toc-num">1.</span> Kernarchitektur & Keine Datenerfassung</a>
+          <a href="#section-2-de" class="toc-link"><span class="toc-num">2.</span> Android-Geräteberechtigungen</a>
+          <a href="#section-3-de" class="toc-link"><span class="toc-num">3.</span> Optionales Google Drive Backup</a>
+          <a href="#section-4-de" class="toc-link"><span class="toc-num">4.</span> Google Play In-App-Abrechnung</a>
+          <a href="#section-5-de" class="toc-link"><span class="toc-num">5.</span> Datensicherheitsmatrix (Google Play)</a>
+          <a href="#section-6-de" class="toc-link"><span class="toc-num">6.</span> Datenaufbewahrung & Löschung</a>
+          <a href="#section-7-de" class="toc-link"><span class="toc-num">7.</span> Schutz der Privatsphäre von Kindern</a>
+          <a href="#section-8-de" class="toc-link"><span class="toc-num">8.</span> Drittanbieter-Dienste & Links</a>
+          <a href="#section-9-de" class="toc-link"><span class="toc-num">9.</span> Kontaktinformationen des Entwicklers</a>
+        </div>
+      </nav>
+
+      <!-- Section 1 DE -->
+      <section id="section-1-de" class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+          </div>
+          <div>
+            <div class="card-section-num">Abschnitt 1</div>
+            <h2>Kernarchitektur: 100% Offline-First &amp; Keine Datenerfassung</h2>
+          </div>
+        </div>
+
+        <p>
+          HydroGrow (Paket-ID <code>com.h3dapps.hydrogrow</code>) basiert von Grund auf auf einer strikten <strong>Offline-First-Datenschutzarchitektur</strong>. Wir sind der festen Überzeugung, dass Ihre Anbaudaten, Pflanzenforschung und Gewächshausaufzeichnungen ausschließlich Ihnen gehören.
+        </p>
+
+        <p>
+          Alle während der Nutzung der Anwendung erstellten Daten - einschließlich Wachstumszyklen, Pflanzensorten, Wachstumsphasen, Journalnotizen, Fotos von Wurzeln und Pflanzen, Sensor-Messwerte (pH, EC, PPM, Wasserstand, Lösungs- und Raumtemperaturen, Luftfeuchtigkeit), Nährstoffberechnungen und Vorlagen - werden ausschließlich in einer privaten, isolierten SQLite-Datenbank auf Ihrem lokalen Gerät gespeichert.
+        </p>
+
+        <div class="callout">
+          <div class="callout-title">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            Unser Datenschutzversprechen
+          </div>
+          <p>
+            Die Anwendung betreibt <strong>keine Tracking-Server</strong>, erfasst <strong>keine Verhaltens- oder Analysedaten</strong>, bindet <strong>keine Werbenetzwerk-SDKs</strong> ein, nutzt <strong>keine Tracking-Cookies oder Werbe-IDs</strong> und verkauft oder übermittelt niemals persönliche Daten an Dritte.
+          </p>
+        </div>
+      </section>
+
+
+        <div class="callout" style="background: rgba(34, 197, 94, 0.08); border-color: rgba(34, 197, 94, 0.3);">
+          <div class="callout-title" style="color: var(--primary);">Benutzersupport und In-App-Fehlerberichte</div>
+          <p>
+            Wenn Sie freiwillig einen Fehlerbericht oder einen Funktionsvorschlag über das In-App-Formular oder per E-Mail einreichen, werden Ihre angegebene Kontakt-E-Mail-Adresse und optionale Gerätediagnosedaten (Android-Version, Gerätemodell, App-Build) ausschließlich zur Behebung des gemeldeten Problems verwendet. Diese Angaben werden niemals an Dritte weitergegeben oder für Marketingzwecke genutzt.
+          </p>
+        </div>
+      <!-- Section 2 DE -->
+      <section id="section-2-de" class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          </div>
+          <div>
+            <div class="card-section-num">Abschnitt 2</div>
+            <h2>Android-Geräteberechtigungen und ausdrückliche Zwecke</h2>
+          </div>
+        </div>
+
+        <p>
+          Die Anwendung fordert ausschließlich Standard-Android-Berechtigungen an, die für vom Benutzer initiierte Kernfunktionen zwingend erforderlich sind:
+        </p>
+
+        <ul>
+          <li>
+            <strong>Kamera (<code>android.permission.CAMERA</code>):</strong>
+            Wird ausschließlich angefordert, wenn Sie sich dafür entscheiden, ein Foto Ihrer Pflanzen, Wurzeln oder Ernte direkt im Tagebuch-Tab aufzunehmen. Die Fotos verbleiben ausschließlich im privaten Gerätespeicher der App.
+          </li>
+          <li>
+            <strong>Fotomediathek (<code>android.permission.READ_MEDIA_IMAGES</code>):</strong>
+            Wird nur angefordert, wenn Sie ein vorhandenes Foto aus Ihrer Gerätegalerie zu einem Pflanzenprotokoll hinzufügen möchten.
+          </li>
+          <li>
+            <strong>Benachrichtigungen (<code>android.permission.POST_NOTIFICATIONS</code>):</strong>
+            Dient ausschließlich der Planung lokaler Erinnerungsalarme für anstehende Wasserwechsel, Nährlösungs-Auffüllungen und pH/EC-Warnungen. Alle Benachrichtigungen werden lokal vom Android-Betriebssystem auf Ihrem Smartphone ausgelöst; es gibt keinen Remote-Push-Server.
+          </li>
+          <li>
+            <strong>Geräteneustart (<code>android.permission.RECEIVE_BOOT_COMPLETED</code>):</strong>
+            Ermöglicht der Anwendung, Ihre geplanten lokalen Pflege-Erinnerungen nach einem Neustart des Smartphones automatisch wieder zu aktivieren.
+          </li>
+          <li>
+            <strong>Vibration (<code>android.permission.VIBRATE</code>):</strong>
+            Bietet haptisches Feedback bei Tastendrücken und Alarmsignalen.
+          </li>
+          <li>
+            <strong>In-App-Käufe (<code>com.android.vending.BILLING</code>):</strong>
+            Ermöglicht den sicheren Erwerb von HydroGrow PRO-Lizenzen oder Abonnements über das offizielle Abrechnungssystem von Google Play.
+          </li>
+          <li>
+            <strong>Netzwerkzugriff (<code>android.permission.INTERNET</code> &amp; <code>ACCESS_NETWORK_STATE</code>):</strong>
+            Wird ausschließlich für zwei benutzergesteuerte Vorgänge verwendet: (1) Lizenzüberprüfung über Google Play und (2) Optionales, benutzerinitiiertes Sichern oder Wiederherstellen von Daten über Ihr persönliches Google Drive über eine direkte, verschlüsselte HTTPS-Verbindung (TLS 1.3).
+          </li>
+        </ul>
+      </section>
+
+      <!-- Section 3 DE -->
+      <section id="section-3-de" class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+          </div>
+          <div>
+            <div class="card-section-num">Abschnitt 3</div>
+            <h2>Optionales Google Drive Backup &amp; Google API-Richtlinien</h2>
+          </div>
+        </div>
+
+        <p>
+          HydroGrow bietet eine optionale, vom Benutzer initiierte Cloud-Backup-Funktion über die offizielle Google Drive API. Die Verknüpfung eines Google-Kontos ist vollkommen freiwillig; alle Hauptfunktionen von HydroGrow bleiben im 100% Offline-Modus uneingeschränkt nutzbar.
+        </p>
+
+        <ul>
+          <li>
+            <strong>Eingeschränkter OAuth-Bereich:</strong> Die Anwendung fordert strikt nur den Bereich <code>https://www.googleapis.com/auth/drive.file</code> an.
+          </li>
+          <li>
+            <strong>Kein Zugriff auf persönliche Dateien:</strong> Unter diesem eingeschränkten Bereich hat HydroGrow NUR Zugriff auf Dateien, die HydroGrow selbst in seinem speziellen Ordner <code>HydroGrow Backups</code> erstellt hat. Die Anwendung hat <strong>keinerlei Zugriff</strong> auf Ihre privaten Dokumente, Tabellen, Fotos oder andere Ordner in Ihrem Google Drive.
+          </li>
+          <li>
+            <strong>Direkte verschlüsselte Übertragung:</strong> Verschlüsselte Sicherungsarchive (Format <code>.hydro</code>) werden direkt zwischen Ihrem Mobilgerät und den offiziellen Google-Servern über sicheres HTTPS (TLS 1.3) übertragen. Es ist kein Entwicklerserver oder Zwischenproxy beteiligt.
+          </li>
+          <li>
+            <strong>Einhaltung der Richtlinien für Nutzerdaten der Google API-Dienste:</strong> Die Nutzung von Informationen aus Google APIs entspricht den <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener" style="color: var(--primary);">Richtlinien für Nutzerdaten der Google API-Dienste</a>, einschließlich der Anforderungen für die beschränkte Nutzung.
+          </li>
+          <li>
+            <strong>Konto-Trennung und Token-Löschung:</strong> Sie können Ihr Google-Konto jederzeit im Backup-Center der Anwendung trennen, wodurch alle Zugriffs-Token sofort vom lokalen Gerät gelöscht werden.
+          </li>
+        </ul>
+      </section>
+
+      <!-- Section 4 DE -->
+      <section id="section-4-de" class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+          </div>
+          <div>
+            <div class="card-section-num">Abschnitt 4</div>
+            <h2>Google Play In-App-Abrechnung (PRO-Upgrades)</h2>
+          </div>
+        </div>
+
+        <p>
+          HydroGrow bietet optionale PRO-Upgrades (Lifetime-Lizenz oder Abonnement), die erweiterte Pflanzenslots, Kalibrierungslabore und automatische Cloud-Synchronisierung freischalten.
+        </p>
+        <p>
+          Alle Zahlungsvorgänge, Kreditkartenverarbeitungen und Rechnungsstellungen werden ausschließlich über das <strong>Google Play Abrechnungssystem</strong> abgewickelt. HydroGrow erfasst, überträgt oder speichert zu keinem Zeitpunkt Kreditkartennummern, Bankverbindungen oder Rechnungsadressen.
+        </p>
+      </section>
+
+      <!-- Section 5 DE -->
+      <section id="section-5-de" class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          </div>
+          <div>
+            <div class="card-section-num">Abschnitt 5</div>
+            <h2>Datensicherheitsmatrix nach Google Play Vorgaben</h2>
+          </div>
+        </div>
+
+        <p>
+          Gemäß den Offenlegungspflichten von Google Play fasst die folgende Tabelle alle Datenkategorien und deren Handhabung zusammen:
+        </p>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Datenkategorie</th>
+                <th>Erfasst?</th>
+                <th>Geteilt?</th>
+                <th>Verarbeitung / Speicherung</th>
+                <th>Nutzer-Löschung</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Persönliche Daten</strong> (Name, E-Mail, Telefon)</td>
+                <td><span class="status-pill pill-green">NEIN</span></td>
+                <td><span class="status-pill pill-green">NEIN</span></td>
+                <td>Wird nicht erfasst</td>
+                <td>Nicht zutreffend</td>
+              </tr>
+              <tr>
+                <td><strong>Standortdaten</strong> (GPS / Netzwerk)</td>
+                <td><span class="status-pill pill-green">NEIN</span></td>
+                <td><span class="status-pill pill-green">NEIN</span></td>
+                <td>Wird nicht erfasst</td>
+                <td>Nicht zutreffend</td>
+              </tr>
+              <tr>
+                <td><strong>Finanzdaten</strong> (Kreditkarten, Konten)</td>
+                <td><span class="status-pill pill-green">NEIN</span></td>
+                <td><span class="status-pill pill-green">NEIN</span></td>
+                <td>Ausschließlich über Google Play Billing verarbeitet</td>
+                <td>Google Play Konto</td>
+              </tr>
+              <tr>
+                <td><strong>Fotos &amp; Bilder</strong> (Pflanzen- &amp; Tagebuchfotos)</td>
+                <td><span class="status-pill pill-blue">OPTIONAL</span></td>
+                <td><span class="status-pill pill-green">NEIN</span></td>
+                <td>Zu 100% lokal auf dem Gerät gespeichert</td>
+                <td>Löschen in App / Reset</td>
+              </tr>
+              <tr>
+                <td><strong>App-Aktivität &amp; Diagnose</strong> (Analytik, Abstürze)</td>
+                <td><span class="status-pill pill-green">NEIN</span></td>
+                <td><span class="status-pill pill-green">NEIN</span></td>
+                <td>Keine Tracker oder SDKs von Drittanbietern</td>
+                <td>Nicht zutreffend</td>
+              </tr>
+              <tr>
+                <td><strong>Anbau- &amp; Sensordaten</strong> (pH, EC, Messungen)</td>
+                <td><span class="status-pill pill-blue">NUR LOKAL</span></td>
+                <td><span class="status-pill pill-green">NEIN</span></td>
+                <td>Lokale SQLite-Datenbank Sandbox</td>
+                <td>In-App Werksreset</td>
+              </tr>
+              <tr>
+                <td><strong>Cloud-Backup-Archiv</strong> (Verschlüsselt .hydro)</td>
+                <td><span class="status-pill pill-blue">FREIWILLIG</span></td>
+                <td><span class="status-pill pill-green">NEIN</span></td>
+                <td>Eigenes privates Google Drive des Nutzers</td>
+                <td>In Google Drive löschen</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section 6 DE -->
+      <section id="section-6-de" class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
+          </div>
+          <div>
+            <div class="card-section-num">Abschnitt 6</div>
+            <h2>Datenaufbewahrung und Löschungsrichtlinien (DSGVO)</h2>
+          </div>
+        </div>
+
+        <p>
+          Sie behalten jederzeit die vollständige Kontrolle und das Eigentum an Ihren Daten. Da wir keine Daten auf externen Servern speichern, müssen Sie keine Anfragen zur Löschung Ihrer Daten aus einer zentralen Datenbank stellen.
+        </p>
+
+        <p>Sie können alle Anwendungsdaten jederzeit über die folgenden Optionen löschen:</p>
+
+        <div class="steps-grid">
+          <div class="step-box">
+            <div class="step-num">1</div>
+            <div class="step-title">In-App Werksreset</div>
+            <p class="step-desc">
+              Öffnen Sie <strong>Einstellungen &gt; Werksreset</strong>. Dadurch werden die SQLite-Datenbank, alle Pflanzeneinträge, Verlaufsdiagramme und lokalen Fotos unwiderruflich gelöscht.
+            </p>
+          </div>
+          <div class="step-box">
+            <div class="step-num">2</div>
+            <div class="step-title">Google Drive Bereinigung</div>
+            <p class="step-desc">
+              Öffnen Sie Ihr Google Drive, suchen Sie den Ordner <code>HydroGrow Backups</code> und löschen Sie die <code>.hydro</code>-Dateien.
+            </p>
+          </div>
+          <div class="step-box">
+            <div class="step-num">3</div>
+            <div class="step-title">App deinstallieren</div>
+            <p class="step-desc">
+              Durch die Deinstallation von HydroGrow von Ihrem Android-Gerät werden die private Datenbank der App und alle temporären Dateien sofort entfernt.
+            </p>
+          </div>
+        </div>
+
+        <p>
+          Detaillierte Anweisungen finden Sie in unserer <a href="deletion.html" style="color: var(--primary); font-weight: 600;">Datenlöschungsanleitung</a>.
+        </p>
+      </section>
+
+      <!-- Section 7 DE -->
+      <section id="section-7-de" class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+          </div>
+          <div>
+            <div class="card-section-num">Abschnitt 7</div>
+            <h2>Schutz der Privatsphäre von Kindern (COPPA / DSGVO-K)</h2>
+          </div>
+        </div>
+
+        <p>
+          HydroGrow ist ein gartenbauliches Werkzeug für erwachsene Züchter und Gartenbegeisterte. Die Anwendung richtet sich nicht an Kinder unter 13 Jahren (in der Europäischen Union unter 16 Jahren).
+        </p>
+        <p>
+          Da die Anwendung keinerlei persönliche Daten erhebt, fordern wir wissentlich keine Daten von Kindern an. Falls Sie vermuten, dass uns ein Kind Daten übermittelt hat, kontaktieren Sie uns bitte unter <code>h3dindustry@gmail.com</code>.
+        </p>
+      </section>
+
+      <!-- Section 8 DE -->
+      <section id="section-8-de" class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+          </div>
+          <div>
+            <div class="card-section-num">Abschnitt 8</div>
+            <h2>Drittanbieter-Dienste &amp; Links</h2>
+          </div>
+        </div>
+
+        <p>
+          Die Anwendung interagiert mit Drittanbietern ausschließlich für App-Bereitstellung, Abrechnung und optionale Cloud-Sicherungen:
+        </p>
+
+        <ul>
+          <li>
+            <strong>Google Play Dienste &amp; Abrechnung:</strong> App-Bereitstellung, Updates und Verifizierung von In-App-Käufen.
+            <br>
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color: var(--primary);">Google Datenschutzerklärung</a> |
+            <a href="https://payments.google.com/terms" target="_blank" rel="noopener" style="color: var(--primary);">Google Zahlungsbedingungen</a>
+          </li>
+          <li>
+            <strong>Google Drive API:</strong> Optionales, benutzergesteuertes Cloud-Backup.
+            <br>
+            <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener" style="color: var(--primary);">Richtlinien für Nutzerdaten der Google API-Dienste</a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Section 9 DE -->
+      <section id="section-9-de" class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          </div>
+          <div>
+            <div class="card-section-num">Abschnitt 9</div>
+            <h2>Kontaktinformationen des Entwicklers</h2>
+          </div>
+        </div>
+
+        <p>
+          Wenn Sie Fragen oder Anmerkungen zu dieser Datenschutzerklärung haben, wenden Sie sich bitte direkt an den Entwickler:
+        </p>
+
+        <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 18px; margin: 16px 0;">
+          <p style="margin-bottom: 6px;"><strong>Entwickler / Herausgeber:</strong> H3DApps (Jiří Herman)</p>
+          <p style="margin-bottom: 6px;"><strong>Anwendung:</strong> HydroGrow - Smart Hydroponics Manager</p>
+          <p style="margin-bottom: 6px;"><strong>Paketname:</strong> <code>com.h3dapps.hydrogrow</code></p>
+          <p style="margin-bottom: 6px;"><strong>Standort:</strong> Tschechische Republik, Europäische Union</p>
+          <p style="margin-bottom: 0;"><strong>Direktkontakt:</strong> <a href="mailto:h3dindustry@gmail.com" style="color: var(--primary); font-weight: 600;">h3dindustry@gmail.com</a></p>
+        </div>
+
+        <p style="font-size: 13px; color: var(--text-muted); margin-top: 14px;">
+          Wir beantworten alle verifizierten Anfragen innerhalb von 30 Tagen in voller Übereinstimmung mit der DSGVO der Europäischen Union.
+        </p>
+      </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="deletion.html">Data Deletion</a>
+        <a href="terms.html">Terms of Service (EULA)</a>
+        <a href="https://play.google.com/store/apps/details?id=com.h3dapps.hydrogrow" target="_blank" rel="noopener">Google Play Store</a>
+      </div>
+      <p>&copy; 2026 H3DApps / Jiří Herman. All rights reserved.</p>
+      <p class="footer-note">HydroGrow - Smart Hydroponics Manager &amp; Predictive Nutrient Engine</p>
+    </footer>
+
+  </div>
+
+  <script>
+    function switchLang(lang) {
+      document.querySelectorAll('.lang-content').forEach(function(el) {
+        el.classList.remove('active');
+      });
+      document.querySelectorAll('.lang-btn').forEach(function(btn) {
+        btn.classList.remove('active');
+      });
+
+      var target = document.getElementById('content-' + lang);
+      if (target) {
+        target.classList.add('active');
+      }
+
+      var activeBtn = Array.from(document.querySelectorAll('.lang-btn')).find(function(b) {
+        return b.textContent.trim().toLowerCase() === lang.toLowerCase();
+      });
+      if (activeBtn) {
+        activeBtn.classList.add('active');
+      }
+
+      try {
+        localStorage.setItem('hydrogrow_web_lang', lang);
+      } catch (e) {}
+    }
+
+    (function() {
+      try {
+        var saved = localStorage.getItem('hydrogrow_web_lang');
+        if (saved && (saved === 'en' || saved === 'cs' || saved === 'de')) {
+          switchLang(saved);
+        }
+      } catch (e) {}
+    })();
+  </script>
+</body>
+</html>

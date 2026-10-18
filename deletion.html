@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="gKRiPti4PTMrZ6z9t9xqRK4ANlUbmuDYFeeg3snKhZE" />
+  <meta name="description" content="Data and account deletion instructions for HydroGrow - Smart Hydroponics Manager (com.h3dapps.hydrogrow). Steps to delete local data and cloud backups.">
+  <title>Data Deletion - HydroGrow</title>
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon.png?v=2" />
+  <link rel="shortcut icon" href="favicon.png?v=2" />
+  <link rel="apple-touch-icon" href="transparent_with_arc.png" />
+  <style>
+    :root {
+      --bg: #0B1120;
+      --card-bg: #1E293B;
+      --card-elevated: #243248;
+      --border: #334155;
+      --primary: #22C55E;
+      --primary-hover: #16A34A;
+      --text: #F8FAFC;
+      --text-secondary: #94A3B8;
+      --text-muted: #64748B;
+      --danger: #EF4444;
+      --warning: #F59E0B;
+      --info: #38BDF8;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-pill: 9999px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(11, 17, 32, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .brand-logo {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .brand-name {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--text);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .nav-link {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--primary);
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 40px 20px 80px 20px;
+    }
+
+    .hero {
+      text-align: left;
+      margin-bottom: 36px;
+      padding: 32px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+    }
+
+    h1 {
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: -0.8px;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .hero-subtitle {
+      font-size: 16px;
+      color: var(--text-secondary);
+      max-width: 720px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      margin-bottom: 24px;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .card-icon {
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+    }
+
+    .card-icon.danger {
+      color: var(--danger);
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    p {
+      color: var(--text-secondary);
+      font-size: 15px;
+      margin-bottom: 14px;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    ol, ul {
+      color: var(--text-secondary);
+      font-size: 15px;
+      padding-left: 20px;
+      margin-bottom: 14px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    code {
+      font-family: monospace;
+      font-size: 13px;
+      background: rgba(11, 17, 32, 0.7);
+      border: 1px solid var(--border);
+      color: var(--primary);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--primary);
+      color: #0B1120;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 10px 20px;
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      transition: background-color 0.15s ease;
+      margin-top: 10px;
+    }
+
+    .btn:hover {
+      background: var(--primary-hover);
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-pill);
+      padding: 2px;
+      gap: 2px;
+    }
+
+    .lang-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .lang-btn.active {
+      background: var(--primary);
+      color: #0B1120;
+    }
+
+    .lang-content {
+      display: none;
+    }
+
+    .lang-content.active {
+      display: block;
+    }
+
+    .footer {
+      margin-top: 60px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    .footer-links a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .icon {
+      width: 20px;
+      height: 20px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand-link">
+        <img src="transparent_with_arc.png" onerror="if(!this.dataset.err){this.dataset.err=1;this.src='logo.png';}else if(this.dataset.err==1){this.dataset.err=2;this.src='favicon.png';}" alt="HydroGrow" class="brand-logo">
+        <span class="brand-name">HydroGrow</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="privacy.html" class="nav-link">Privacy Policy</a>
+        <a href="deletion.html" class="nav-link active">Data Deletion</a>
+        <a href="terms.html" class="nav-link">Terms (EULA)</a>
+      </div>
+
+      <div class="lang-switcher">
+        <button class="lang-btn active" onclick="switchLang('en')">EN</button>
+        <button class="lang-btn" onclick="switchLang('cs')">CS</button>
+        <button class="lang-btn" onclick="switchLang('de')">DE</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <!-- ENGLISH VERSION -->
+    <div id="content-en" class="lang-content active">
+
+      <header class="hero">
+        <h1>Data &amp; Account Deletion Instructions</h1>
+        <p class="hero-subtitle">
+          Step-by-step guidance on how to delete all personal, sensor, and cultivation data for HydroGrow (package: <code>com.h3dapps.hydrogrow</code>).
+        </p>
+      </header>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          </div>
+          <div>
+            <h2>Offline-First Zero Server Storage Notice</h2>
+          </div>
+        </div>
+        <p>
+          HydroGrow operates on an <strong>Offline-First architecture</strong>. The Application has <strong>no centralized user accounts, no login servers, and no remote databases</strong> holding your personal information.
+        </p>
+        <p>
+          Because all your data exists solely on your local device (in the app's sandboxed SQLite database) and optionally in your own personal Google Drive, you have direct, instantaneous control over deleting 100% of your data at any time without waiting for developer approval.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon danger">
+            <svg class="icon" viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
+          </div>
+          <div>
+            <h2>Option 1: Complete In-App Factory Reset</h2>
+          </div>
+        </div>
+        <p>To permanently and irrevocably erase all data from your device:</p>
+        <ol>
+          <li>Open the <strong>HydroGrow</strong> app on your Android device.</li>
+          <li>Tap the <strong>Settings</strong> tab (gear icon in the bottom navigation bar).</li>
+          <li>Scroll down to the <strong>Danger Zone</strong> section.</li>
+          <li>Tap <strong>Factory Reset</strong> (Tovární reset).</li>
+          <li>Confirm the deletion prompt.</li>
+        </ol>
+        <p>
+          <strong>What is deleted:</strong> All plant cycles, reservoir logs (pH, EC, water levels), notes, photos, custom nutrient recipes, calibration lab data, and application preferences are immediately and permanently removed from device storage.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+          </div>
+          <div>
+            <h2>Option 2: Delete Google Drive Cloud Backups</h2>
+          </div>
+        </div>
+        <p>If you used the optional Google Drive backup feature, you can delete your backup archives at any time:</p>
+        <ol>
+          <li>Open <strong>Google Drive</strong> on your mobile device or at <a href="https://drive.google.com" target="_blank" rel="noopener" style="color: var(--primary);">drive.google.com</a>.</li>
+          <li>Locate the <code>HydroGrow Backups</code> folder.</li>
+          <li>Select and delete all <code>.hydro</code> backup files or delete the entire folder.</li>
+          <li>Empty your Google Drive Trash to permanently purge the files.</li>
+          <li>In the HydroGrow app, open the <strong>Backup Center</strong> and tap <strong>Disconnect Google Drive</strong> to remove OAuth tokens.</li>
+        </ol>
+      </div>
+
+    
+      <!-- Option 3 -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          </div>
+          <div>
+            <h2>Option 3: Deletion of Support &amp; Feedback Records</h2>
+          </div>
+        </div>
+        <p>
+          If you have communicated with us via email or submitted an in-app bug report and wish to delete all associated email conversation logs and contact details, you can request full erasure at any time:
+        </p>
+        <ol class="steps">
+          <li>Send an email to <a href="mailto:h3dindustry@gmail.com" style="color: var(--primary); font-weight: 600;">h3dindustry@gmail.com</a> from the email address you wish to have erased.</li>
+          <li>Use the subject line: <strong>Data Deletion Request - Support Logs</strong>.</li>
+          <li>All associated email correspondence and submitted diagnostic logs will be permanently deleted within <strong>30 days</strong>, and confirmation will be provided.</li>
+        </ol>
+      </div>
+
+    </div>
+
+    <!-- CZECH VERSION -->
+    <div id="content-cs" class="lang-content">
+
+      <header class="hero">
+        <h1>Pokyny pro smazání dat a účtu</h1>
+        <p class="hero-subtitle">
+          Návod krok za krokem, jak trvale odstranit veškerá pěstitelská, senzorová a aplikační data pro aplikaci HydroGrow (balíček: <code>com.h3dapps.hydrogrow</code>).
+        </p>
+      </header>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          </div>
+          <div>
+            <h2>Upozornění: 100% Offline-First architektura bez serverů</h2>
+          </div>
+        </div>
+        <p>
+          Aplikace HydroGrow funguje na striktní <strong>Offline-First architektuře</strong>. Aplikace <strong>nemá žádné centrální uživatelské účty, žádné přihlašovací servery ani vzdálené databáze</strong> shromažďující vaše osobní údaje.
+        </p>
+        <p>
+          Všechna data existují výhradně na vašem lokálním zařízení (v zabezpečeném sandboxu SQLite databáze) a volitelně na vašem soukromém Google Disku. Máte tak okamžitou a přímou kontrolu nad 100 % svých dat kdykoliv, aniž byste museli čekat na vyřízení žádosti vývojářem.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon danger">
+            <svg class="icon" viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
+          </div>
+          <div>
+            <h2>Možnost 1: Úplný tovární reset v aplikaci</h2>
+          </div>
+        </div>
+        <p>Pro trvalé a nevratné vymazání všech dat z vašeho telefonu:</p>
+        <ol>
+          <li>Otevřete aplikaci <strong>HydroGrow</strong> na svém Android zařízení.</li>
+          <li>Přejděte do záložky <strong>Nastavení</strong> (ikona ozubeného kola ve spodní liště).</li>
+          <li>Sjeďte dolů k sekci <strong>Nebezpečná zóna</strong>.</li>
+          <li>Klepněte na <strong>Tovární reset</strong>.</li>
+          <li>Potvrďte výzvu k trvalému smazání.</li>
+        </ol>
+        <p>
+          <strong>Co se smaže:</strong> Všechny pěstební cykly, záznamy měření nádrže (pH, EC, hladina vody), poznámky, fotografie, vlastní receptury živin, kalibrace a uživatelská nastavení jsou okamžitě a nevratně odstraněny z úložiště zařízení.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+          </div>
+          <div>
+            <h2>Možnost 2: Smazání záloh z Google Disku</h2>
+          </div>
+        </div>
+        <p>Pokud jste využívali volitelnou zálohu na Google Disk, můžete své archivy kdykoliv smazat:</p>
+        <ol>
+          <li>Otevřete aplikaci <strong>Google Disk</strong> v telefonu nebo na adrese <a href="https://drive.google.com" target="_blank" rel="noopener" style="color: var(--primary);">drive.google.com</a>.</li>
+          <li>Vyhledejte složku <code>HydroGrow Backups</code>.</li>
+          <li>Označte a smažte všechny záložní soubory <code>.hydro</code> nebo celou tuto složku.</li>
+          <li>Vysypte koš na Disku Google pro trvalé odstranění.</li>
+          <li>V aplikaci HydroGrow otevřete <strong>Centrum zálohování</strong> a klepněte na <strong>Odpojit Google Disk</strong> pro zrušení uložených tokenů.</li>
+        </ol>
+      </div>
+
+    
+      <!-- Option 3 CS -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          </div>
+          <div>
+            <h2>Možnost 3: Výmaz záznamů uživatelské podpory a hlášení</h2>
+          </div>
+        </div>
+        <p>
+          Pokud jste s námi komunikovali e-mailem nebo odeslali hlášení chyby z aplikace a přejete si trvale odstranit historii této komunikace a vaše kontaktní údaje, můžete kdykoli požádat o jejich úplný výmaz:
+        </p>
+        <ol class="steps">
+          <li>Zašlete e-mail na adresu <a href="mailto:h3dindustry@gmail.com" style="color: var(--primary); font-weight: 600;">h3dindustry@gmail.com</a> z adresy, kterou si přejete vymazat.</li>
+          <li>Do předmětu uveďte: <strong>Žádost o výmaz dat - Záznamy podpory</strong>.</li>
+          <li>Veškerá související e-mailová korespondence a přiložené diagnostické záznamy budou trvale odstraněny do <strong>30 dnů</strong> s následným potvrzením o vyřízení.</li>
+        </ol>
+      </div>
+
+    </div>
+
+    <!-- GERMAN VERSION -->
+    <div id="content-de" class="lang-content">
+
+      <header class="hero">
+        <h1>Anweisungen zur Daten- &amp; Kontolöschung</h1>
+        <p class="hero-subtitle">
+          Schritt-für-Schritt-Anleitung zum dauerhaften Löschen aller Anbau-, Sensor- und Anwendungsdaten für HydroGrow (Paket: <code>com.h3dapps.hydrogrow</code>).
+        </p>
+      </header>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          </div>
+          <div>
+            <h2>Hinweis: 100% Offline-First-Architektur ohne Server</h2>
+          </div>
+        </div>
+        <p>
+          HydroGrow basiert auf einer <strong>Offline-First-Architektur</strong>. Die Anwendung hat <strong>keine zentralen Benutzerkonten, keine Login-Server und keine entfernten Datenbanken</strong>, die Ihre Daten speichern.
+        </p>
+        <p>
+          Da alle Ihre Daten ausschließlich auf Ihrem lokalen Gerät (in der isolierten SQLite-Datenbank) und optional in Ihrem persönlichen Google Drive liegen, haben Sie jederzeit die vollständige und sofortige Kontrolle über das Löschen all Ihrer Daten.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon danger">
+            <svg class="icon" viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
+          </div>
+          <div>
+            <h2>Option 1: Vollständiger In-App-Werksreset</h2>
+          </div>
+        </div>
+        <p>Um alle Daten dauerhaft und unwiderruflich von Ihrem Gerät zu löschen:</p>
+        <ol>
+          <li>Öffnen Sie die App <strong>HydroGrow</strong> auf Ihrem Android-Gerät.</li>
+          <li>Tippen Sie auf den Tab <strong>Einstellungen</strong> (Zahnrad-Symbol in der unteren Leiste).</li>
+          <li>Scrollen Sie nach unten zum Abschnitt <strong>Gefahrenzone</strong>.</li>
+          <li>Tippen Sie auf <strong>Werksreset</strong>.</li>
+          <li>Bestätigen Sie den Löschvorgang.</li>
+        </ol>
+        <p>
+          <strong>Was gelöscht wird:</strong> Alle Anbauzyklen, Nährlösungs-Messdaten (pH, EC, Wasserstand), Notizen, Fotos, Rezepturen, Kalibrierungen und Einstellungen werden dauerhaft gelöscht.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+          </div>
+          <div>
+            <h2>Option 2: Google Drive Cloud-Backups löschen</h2>
+          </div>
+        </div>
+        <p>Wenn Sie das optionale Google Drive Backup genutzt haben, können Sie Ihre Sicherungsdateien jederzeit löschen:</p>
+        <ol>
+          <li>Öffnen Sie <strong>Google Drive</strong> auf Ihrem Smartphone oder unter <a href="https://drive.google.com" target="_blank" rel="noopener" style="color: var(--primary);">drive.google.com</a>.</li>
+          <li>Navigieren Sie zum Ordner <code>HydroGrow Backups</code>.</li>
+          <li>Löschen Sie die <code>.hydro</code>-Dateien oder den gesamten Ordner.</li>
+          <li>Leeren Sie den Google Drive Papierkorb.</li>
+          <li>Tippen Sie im Backup-Center der HydroGrow App auf <strong>Google Drive trennen</strong>, um Zugriffs-Tokens zu entfernen.</li>
+        </ol>
+      </div>
+
+    
+      <!-- Option 3 DE -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          </div>
+          <div>
+            <h2>Option 3: Löschung von Support- &amp; Feedback-Aufzeichnungen</h2>
+          </div>
+        </div>
+        <p>
+          Wenn Sie mit uns per E-Mail kommuniziert oder einen Fehlerbericht gesendet haben und die vollständige Löschung des Verlaufs sowie Ihrer Kontaktdaten wünschen, können Sie dies jederzeit anfordern:
+        </p>
+        <ol class="steps">
+          <li>Senden Sie eine E-Mail an <a href="mailto:h3dindustry@gmail.com" style="color: var(--primary); font-weight: 600;">h3dindustry@gmail.com</a> von der Adresse, die gelöscht werden soll.</li>
+          <li>Verwenden Sie den Betreff: <strong>Antrag auf Datenlöschung - Support-Protokolle</strong>.</li>
+          <li>Alle zugehörigen E-Mail-Nachrichten und Diagnosedaten werden innerhalb von <strong>30 Tagen</strong> dauerhaft gelöscht und bestätigt.</li>
+        </ol>
+      </div>
+
+    </div>
+
+    <footer class="footer">
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="deletion.html">Data Deletion</a>
+        <a href="terms.html">Terms of Service</a>
+      </div>
+      <p>&copy; 2026 H3DApps / Jiří Herman. All rights reserved.</p>
+    </footer>
+
+  </div>
+
+  <script>
+    function switchLang(lang) {
+      document.querySelectorAll('.lang-content').forEach(function(el) {
+        el.classList.remove('active');
+      });
+      document.querySelectorAll('.lang-btn').forEach(function(btn) {
+        btn.classList.remove('active');
+      });
+
+      var target = document.getElementById('content-' + lang);
+      if (target) {
+        target.classList.add('active');
+      }
+
+      var activeBtn = Array.from(document.querySelectorAll('.lang-btn')).find(function(b) {
+        return b.textContent.trim().toLowerCase() === lang.toLowerCase();
+      });
+      if (activeBtn) {
+        activeBtn.classList.add('active');
+      }
+
+      try {
+        localStorage.setItem('hydrogrow_web_lang', lang);
+      } catch (e) {}
+    }
+
+    (function() {
+      try {
+        var saved = localStorage.getItem('hydrogrow_web_lang');
+        if (saved && (saved === 'en' || saved === 'cs' || saved === 'de')) {
+          switchLang(saved);
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  </div>
+
+</body>
+</html>

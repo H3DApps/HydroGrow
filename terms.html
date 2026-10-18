@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="gKRiPti4PTMrZ6z9t9xqRK4ANlUbmuDYFeeg3snKhZE" />
+  <meta name="description" content="Terms of Service and End User License Agreement (EULA) for HydroGrow - Smart Hydroponics Manager (com.h3dapps.hydrogrow).">
+  <title>Terms of Service (EULA) - HydroGrow</title>
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon.png?v=2" />
+  <link rel="shortcut icon" href="favicon.png?v=2" />
+  <link rel="apple-touch-icon" href="transparent_with_arc.png" />
+  <style>
+    :root {
+      --bg: #0B1120;
+      --card-bg: #1E293B;
+      --card-elevated: #243248;
+      --border: #334155;
+      --primary: #22C55E;
+      --primary-hover: #16A34A;
+      --text: #F8FAFC;
+      --text-secondary: #94A3B8;
+      --text-muted: #64748B;
+      --danger: #EF4444;
+      --warning: #F59E0B;
+      --info: #38BDF8;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-pill: 9999px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(11, 17, 32, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 0;
+    }
+
+    .nav-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 800;
+      font-size: 18px;
+    }
+
+    .brand-logo {
+      width: 28px;
+      height: 28px;
+      border-radius: var(--radius-sm);
+      object-fit: contain;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .nav-link {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.15s ease;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--primary);
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .hero h1 {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+
+    .hero-subtitle {
+      color: var(--text-secondary);
+      font-size: 16px;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      margin-bottom: 24px;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .card-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+
+    .card h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .card p {
+      color: var(--text-secondary);
+      font-size: 15px;
+      margin-bottom: 14px;
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .card ul {
+      margin: 12px 0 16px 20px;
+      color: var(--text-secondary);
+      font-size: 15px;
+    }
+
+    .card li {
+      margin-bottom: 8px;
+    }
+
+    .card strong {
+      color: var(--text);
+    }
+
+    .card code {
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid var(--border);
+      padding: 2px 6px;
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      color: var(--primary);
+    }
+
+    .callout {
+      background: rgba(245, 158, 11, 0.08);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      margin: 16px 0;
+    }
+
+    .callout-title {
+      font-weight: 700;
+      color: var(--warning);
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-pill);
+      padding: 2px;
+      gap: 2px;
+    }
+
+    .lang-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .lang-btn.active {
+      background: var(--primary);
+      color: #0B1120;
+    }
+
+    .lang-content {
+      display: none;
+    }
+
+    .lang-content.active {
+      display: block;
+    }
+
+    .footer {
+      margin-top: 60px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    .footer-links a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .icon {
+      width: 20px;
+      height: 20px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand-link">
+        <img src="transparent_with_arc.png" onerror="if(!this.dataset.err){this.dataset.err=1;this.src='logo.png';}else if(this.dataset.err==1){this.dataset.err=2;this.src='favicon.png';}" alt="HydroGrow" class="brand-logo">
+        <span class="brand-name">HydroGrow</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="privacy.html" class="nav-link">Privacy Policy</a>
+        <a href="deletion.html" class="nav-link">Data Deletion</a>
+        <a href="terms.html" class="nav-link active">Terms (EULA)</a>
+      </div>
+
+      <div class="lang-switcher">
+        <button class="lang-btn active" onclick="switchLang('en')">EN</button>
+        <button class="lang-btn" onclick="switchLang('cs')">CS</button>
+        <button class="lang-btn" onclick="switchLang('de')">DE</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <!-- ENGLISH CONTENT -->
+    <div id="content-en" class="lang-content active">
+      <header class="hero">
+        <h1>Terms of Service &amp; EULA</h1>
+        <p class="hero-subtitle">
+          End User License Agreement and Terms of Service governing the use of HydroGrow (package: <code>com.h3dapps.hydrogrow</code>).
+        </p>
+      </header>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          </div>
+          <div>
+            <h2>1. End User License Agreement (EULA)</h2>
+          </div>
+        </div>
+        <p>
+          By downloading, installing, accessing, or using the HydroGrow application ("the Application", "Software"), you agree to be bound by these Terms of Service. HydroGrow is licensed, not sold, to you by H3DApps / Jiří Herman ("Licensor") for personal or professional agricultural and greenhouse management.
+        </p>
+        <p>
+          Licensor grants you a revocable, non-exclusive, non-transferable, limited license to download, install, and use the Application on Android devices owned or controlled by you, strictly in accordance with these Terms.
+        </p>
+        <p>
+          HydroGrow is a horticultural management tool strictly intended for legal gardening, agriculture, and authorized botanical cultivation in full compliance with all applicable local, national, and international laws.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+          </div>
+          <div>
+            <h2>2. Botanical, Dosing &amp; Cultivation Disclaimer</h2>
+          </div>
+        </div>
+        <p>
+          HydroGrow provides hydroponic calculations, nutrient dosing estimates, pH adjustment targets, and solution diagnostics based on general botanical models and user-provided inputs.
+        </p>
+        <div class="callout">
+          <div class="callout-title">Important Horticultural &amp; Safety Warning</div>
+          <p>
+            Calculations are provided for advisory and educational purposes only. Water chemistry, fertilizer salt purity, ambient temperature, humidity, and plant variety health vary significantly in real-world environments. You remain solely responsible for verifying electrical conductivity (EC), pH, water temperature, and chemical handling precautions (including the safe use of concentrated acids and bases for pH correction).
+          </p>
+        </div>
+        <p>
+          Licensor shall not be liable for any crop damage, plant loss, nutrient burn, equipment malfunction, or financial loss resulting from reliance on the Application's calculations or suggestions.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+          </div>
+          <div>
+            <h2>3. Purchases, Subscriptions &amp; Google Play Billing</h2>
+          </div>
+        </div>
+        <p>
+          HydroGrow offers optional PRO license upgrades through Google Play In-App Billing:
+        </p>
+        <ul>
+          <li><strong>Billing Processing:</strong> All transactions are processed directly by Google Play. Licensor never receives or stores your credit card, bank details, or billing credentials.</li>
+          <li><strong>Subscriptions:</strong> Subscriptions automatically renew unless cancelled through the <a href="https://play.google.com/store/account/subscriptions" target="_blank" rel="noopener" style="color: var(--primary); font-weight: 600;">Google Play Subscriptions Center</a> at least 24 hours prior to the end of the current billing cycle. You may manage or cancel subscriptions at any time via <a href="https://play.google.com/store/account/subscriptions" target="_blank" rel="noopener" style="color: var(--primary);">play.google.com/store/account/subscriptions</a>.</li>
+          <li><strong>Refunds:</strong> Refund requests are governed by Google Play's standard refund policies.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+          </div>
+          <div>
+            <h2>4. Governing Law &amp; Jurisdiction</h2>
+          </div>
+        </div>
+        <p>
+          These Terms shall be governed by and construed in accordance with the laws of the <strong>Czech Republic</strong> and the applicable regulations of the <strong>European Union</strong>, without regard to conflict of law principles.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          </div>
+          <div>
+            <h2>5. Contact Information</h2>
+          </div>
+        </div>
+        <p>
+          For inquiries regarding these Terms of Service or license permissions, please contact:
+        </p>
+        <p>
+          <strong>H3DApps (Jiří Herman)</strong><br>
+          Email: <a href="mailto:h3dindustry@gmail.com" style="color: var(--primary);">h3dindustry@gmail.com</a><br>
+          Location: Czech Republic, European Union
+        </p>
+      </div>
+    </div>
+
+    <!-- CZECH CONTENT -->
+    <div id="content-cs" class="lang-content">
+      <header class="hero">
+        <h1>Podmínky použití &amp; EULA</h1>
+        <p class="hero-subtitle">
+          Licenční ujednání pro koncového uživatele a podmínky upravující používání aplikace HydroGrow (balíček: <code>com.h3dapps.hydrogrow</code>).
+        </p>
+      </header>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          </div>
+          <div>
+            <h2>1. Licenční ujednání s koncovým uživatelem (EULA)</h2>
+          </div>
+        </div>
+        <p>
+          Stažením, instalací, přístupem nebo používáním aplikace HydroGrow ("Aplikace", "Software") vyjadřujete souhlas s těmito Podmínkami použití. Aplikace HydroGrow je vám licencována, nikoli prodávána, vývojářem H3DApps / Jiří Herman ("Poskytovatel licence") pro osobní i profesionální správu pěstování a skleníků.
+        </p>
+        <p>
+          Poskytovatel licence vám uděluje odvolatelnou, nevýhradní, nepřenosnou a omezenou licenci ke stažení, instalaci a používání Aplikace na zařízeních se systémem Android, která vlastníte nebo spravujete, striktně v souladu s těmito podmínkami.
+        </p>
+        <p>
+          Aplikace HydroGrow je agronomický a zahradnický nástroj určený výhradně pro legální domácí i komerční pěstování plodin, bylin a zeleniny v plném souladu s právními předpisy vaší jurisdikce.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+          </div>
+          <div>
+            <h2>2. Zřeknutí se odpovědnosti: Botanické výpočty, dávkování a kultivace</h2>
+          </div>
+        </div>
+        <p>
+          Aplikace HydroGrow poskytuje hydroponické výpočty, odhady dávkování živin, cílové hodnoty pro úpravu pH a diagnostiku stavu roztoku na základě obecných botanických modelů a vstupních údajů zadaných uživatelem.
+        </p>
+        <div class="callout">
+          <div class="callout-title">Důležité pěstitelské a bezpečnostní upozornění</div>
+          <p>
+            Veškeré výpočty jsou poskytovány výhradně pro poradenské a vzdělávací účely. Skutečná chemie vody, čistota hnojivových solí, teplota okolí, vlhkost vzduchu a kondice jednotlivých odrůd rostlin se v reálném prostředí mohou výrazně lišit. Vždy nesete výhradní odpovědnost za kontrolu elektrické vodivosti (EC), pH, teploty vody a za dodržování bezpečnostních předpisů při manipulaci s chemikáliemi (včetně bezpečné manipulace s koncentrovanými kyselinami a zásadami pro korekci pH).
+          </p>
+        </div>
+        <p>
+          Poskytovatel licence neodpovídá za jakékoli poškození plodin, úhyn rostlin, popálení živinami, poruchu technického vybavení ani finanční ztráty vzniklé v důsledku spoléhání se na výpočty nebo návrhy Aplikace.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+          </div>
+          <div>
+            <h2>3. Nákupy, předplatné a fakturace Google Play</h2>
+          </div>
+        </div>
+        <p>
+          Aplikace HydroGrow nabízí volitelná vylepšení licence PRO prostřednictvím systému Google Play In-App Billing:
+        </p>
+        <ul>
+          <li><strong>Zpracování plateb:</strong> Veškeré platební transakce jsou zpracovávány přímo společností Google Play. Poskytovatel licence nikdy nezískává ani neukládá údaje o vaší platební kartě, bankovní údaje ani fakturační přihlašovací údaje.</li>
+          <li><strong>Předplatné:</strong> Předplatné se automaticky obnovuje, pokud není zrušeno v <a href="https://play.google.com/store/account/subscriptions" target="_blank" rel="noopener" style="color: var(--primary); font-weight: 600;">Centru předplatných Google Play</a> alespoň 24 hodin před koncem aktuálního zúčtovacího období. Správu i zrušení můžete kdykoli provést na adrese <a href="https://play.google.com/store/account/subscriptions" target="_blank" rel="noopener" style="color: var(--primary);">play.google.com/store/account/subscriptions</a>.</li>
+          <li><strong>Vrácení peněz:</strong> Žádosti o vrácení peněz podléhají standardním pravidlům a zásadám pro vrácení plateb obchodu Google Play.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+          </div>
+          <div>
+            <h2>4. Rozhodné právo a jurisdikce</h2>
+          </div>
+        </div>
+        <p>
+          Tyto Podmínky se řídí a vykládají v souladu s právními předpisy <strong>České republiky</strong> a platnými nařízeními <strong>Evropské unie</strong>, bez ohledu na kolizní normy.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          </div>
+          <div>
+            <h2>5. Kontaktní informace</h2>
+          </div>
+        </div>
+        <p>
+          V případě dotazů týkajících se těchto Podmínek použití nebo licenčních oprávnění nás prosím kontaktujte:
+        </p>
+        <p>
+          <strong>H3DApps (Jiří Herman)</strong><br>
+          E-mail: <a href="mailto:h3dindustry@gmail.com" style="color: var(--primary);">h3dindustry@gmail.com</a><br>
+          Lokalita: Česká republika, Evropská unie
+        </p>
+      </div>
+    </div>
+
+    <!-- GERMAN CONTENT -->
+    <div id="content-de" class="lang-content">
+      <header class="hero">
+        <h1>Nutzungsbedingungen &amp; EULA</h1>
+        <p class="hero-subtitle">
+          Endbenutzer-Lizenzvereinbarung und Nutzungsbedingungen für die Nutzung von HydroGrow (Paket: <code>com.h3dapps.hydrogrow</code>).
+        </p>
+      </header>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          </div>
+          <div>
+            <h2>1. Endbenutzer-Lizenzvereinbarung (EULA)</h2>
+          </div>
+        </div>
+        <p>
+          Durch das Herunterladen, Installieren, Zugreifen auf oder Verwenden der HydroGrow-Anwendung ("die Anwendung", "Software") erklären Sie sich mit diesen Nutzungsbedingungen einverstanden. HydroGrow wird Ihnen von H3DApps / Jiří Herman ("Lizenzgeber") für die persönliche oder professionelle landwirtschaftliche Betriebs- und Gewächshausverwaltung lizenziert, nicht verkauft.
+        </p>
+        <p>
+          Der Lizenzgeber gewährt Ihnen eine widerrufliche, nicht-exklusive, nicht übertragbare, beschränkte Lizenz zum Herunterladen, Installieren und Verwenden der Anwendung auf Android-Geräten, die sich in Ihrem Besitz oder unter Ihrer Kontrolle befinden, strikt in Übereinstimmung mit diesen Bedingungen.
+        </p>
+        <p>
+          HydroGrow ist ein gartenbauliches Management-Werkzeug, das ausschließlich für den legalen Gartenbau, die Landwirtschaft und den autorisierten Pflanzenanbau in voller Übereinstimmung mit den geltenden Gesetzen bestimmt ist.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+          </div>
+          <div>
+            <h2>2. Haftungsausschluss für Botanik, Dosierung und Kultivierung</h2>
+          </div>
+        </div>
+        <p>
+          HydroGrow bietet hydroponische Berechnungen, Schätzungen zur Nährstoffdosierung, Zielwerte zur pH-Wert-Korrektur und Lösungsdiagnosen basierend auf allgemeinen botanischen Modellen und vom Benutzer bereitgestellten Eingaben.
+        </p>
+        <div class="callout">
+          <div class="callout-title">Wichtiger gartenbaulicher und Sicherheits-Warnhinweis</div>
+          <p>
+            Berechnungen werden ausschließlich zu beratenden und bildungsbezogenen Zwecken bereitgestellt. Wasserchemie, Reinheit der Düngesalze, Umgebungstemperatur, Luftfeuchtigkeit und Pflanzensortengesundheit variieren in realen Umgebungen erheblich. Sie tragen die alleinige Verantwortung für die Überprüfung der elektrischen Leitfähigkeit (EC), des pH-Werts, der Wassertemperatur und für die Einhaltung von Sicherheitsvorkehrungen beim Umgang mit Chemikalien (einschließlich der sicheren Handhabung von konzentrierten Säuren und Basen zur pH-Wert-Korrektur).
+          </p>
+        </div>
+        <p>
+          Der Lizenzgeber haftet nicht für Ernteschäden, Pflanzenverluste, Nährstoffverbrennungen, Gerätefehlfunktionen oder finanzielle Verluste, die sich aus dem Vertrauen auf Berechnungen oder Vorschläge der Anwendung ergeben.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+          </div>
+          <div>
+            <h2>3. Käufe, Abonnements und Google Play-Abrechnung</h2>
+          </div>
+        </div>
+        <p>
+          HydroGrow bietet optionale PRO-Lizenz-Upgrades über die Google Play In-App-Abrechnung an:
+        </p>
+        <ul>
+          <li><strong>Zahlungsabwicklung:</strong> Alle Transaktionen werden direkt von Google Play abgewickelt. Der Lizenzgeber erhält oder speichert niemals Ihre Kreditkarten-, Bank- oder Abrechnungsdaten.</li>
+          <li><strong>Abonnements:</strong> Abonnements verlängern sich automatisch, sofern sie nicht mindestens 24 Stunden vor Ablauf des aktuellen Abrechnungszeitraums im <a href="https://play.google.com/store/account/subscriptions" target="_blank" rel="noopener" style="color: var(--primary); font-weight: 600;">Google Play Abonnements-Center</a> gekündigt werden. Sie können Abonnements jederzeit unter <a href="https://play.google.com/store/account/subscriptions" target="_blank" rel="noopener" style="color: var(--primary);">play.google.com/store/account/subscriptions</a> verwalten oder kündigen.</li>
+          <li><strong>Rückerstattungen:</strong> Rückerstattungsanfragen unterliegen den Standard-Rückerstattungsrichtlinien von Google Play.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+          </div>
+          <div>
+            <h2>4. Anwendbares Recht und Gerichtsstand</h2>
+          </div>
+        </div>
+        <p>
+          Diese Bedingungen unterliegen den Gesetzen der <strong>Tschechischen Republik</strong> und den geltenden Vorschriften der <strong>Europäischen Union</strong> und werden nach diesen ausgelegt, ungeachtet der Bestimmungen des Kollisionsrechts.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          </div>
+          <div>
+            <h2>5. Kontaktinformationen</h2>
+          </div>
+        </div>
+        <p>
+          Bei Fragen zu diesen Nutzungsbedingungen oder Lizenzberechtigungen wenden Sie sich bitte an:
+        </p>
+        <p>
+          <strong>H3DApps (Jiří Herman)</strong><br>
+          E-Mail: <a href="mailto:h3dindustry@gmail.com" style="color: var(--primary);">h3dindustry@gmail.com</a><br>
+          Standort: Tschechische Republik, Europäische Union
+        </p>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="deletion.html">Data Deletion</a>
+        <a href="terms.html">Terms of Service</a>
+      </div>
+      <p>&copy; 2026 H3DApps / Jiří Herman. All rights reserved.</p>
+    </footer>
+
+  </div>
+
+  <script>
+    function switchLang(lang) {
+      document.querySelectorAll('.lang-content').forEach(function(el) {
+        el.classList.remove('active');
+      });
+      document.querySelectorAll('.lang-btn').forEach(function(btn) {
+        btn.classList.remove('active');
+      });
+
+      var target = document.getElementById('content-' + lang);
+      if (target) {
+        target.classList.add('active');
+      }
+
+      var activeBtn = Array.from(document.querySelectorAll('.lang-btn')).find(function(b) {
+        return b.textContent.trim().toLowerCase() === lang.toLowerCase();
+      });
+      if (activeBtn) {
+        activeBtn.classList.add('active');
+      }
+
+      try {
+        localStorage.setItem('hydrogrow_web_lang', lang);
+      } catch (e) {}
+    }
+
+    (function() {
+      try {
+        var saved = localStorage.getItem('hydrogrow_web_lang');
+        if (saved && (saved === 'en' || saved === 'cs' || saved === 'de')) {
+          switchLang(saved);
+        }
+      } catch (e) {}
+    })();
+  </script>
+</body>
+</html>
