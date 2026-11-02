@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="gKRiPti4PTMrZ6z9t9xqRK4ANlUbmuDYFeeg3snKhZE" />
+  <meta name="description" content="Data and account deletion instructions for HydroGrow - Smart Hydroponics Manager (com.h3dapps.hydrogrow). Steps to delete local data and cloud backups.">
+  <title>Data Deletion - HydroGrow</title>
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon.png?v=2" />
+  <link rel="shortcut icon" href="favicon.png?v=2" />
+  <link rel="apple-touch-icon" href="transparent_with_arc.png" />
+  <style>
+    :root {
+      --bg: #0B1120;
+      --card-bg: #151F32;
+      --card-elevated: #1E293B;
+      --border: #243248;
+      --border-subtle: #1B2639;
+      --primary: #22C55E;
+      --primary-hover: #16A34A;
+      --text: #F8FAFC;
+      --text-secondary: #94A3B8;
+      --text-muted: #64748B;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+      --radius-pill: 9999px;
+      color-scheme: dark;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Navigation */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(11, 17, 32, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .nav-container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .brand-logo {
+      width: 34px;
+      height: 34px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .brand-title {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.4px;
+      color: var(--text);
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-link {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--text);
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-pill);
+      padding: 2px;
+      gap: 2px;
+    }
+
+    .lang-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .lang-btn.active {
+      background: var(--primary);
+      color: #070D18;
+    }
+
+    /* Document Layout */
+    .doc-wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 56px 24px 88px 24px;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 56px;
+      align-items: start;
+    }
+
+    /* Sticky Sidebar */
+    .doc-sidebar {
+      position: sticky;
+      top: 88px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .sidebar-meta {
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .sidebar-meta h4 {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+
+    .sidebar-meta p {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    .sidebar-toc {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .toc-anchor {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 6px 10px;
+      border-radius: var(--radius-sm);
+      transition: all 0.15s ease;
+    }
+
+    .toc-anchor:hover {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    /* Document Body */
+    .doc-body {
+      min-width: 0;
+    }
+
+    .doc-header {
+      margin-bottom: 40px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .doc-title {
+      font-size: 40px;
+      font-weight: 900;
+      letter-spacing: -1.2px;
+      line-height: 1.15;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+
+    .doc-lead {
+      font-size: 17px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .doc-section {
+      padding: 32px 0;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .doc-section:last-of-type {
+      border-bottom: none;
+    }
+
+    .doc-section h2 {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.4px;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+
+    .doc-section p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .doc-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    ol {
+      list-style: decimal;
+      padding-left: 22px;
+      margin-bottom: 16px;
+      color: var(--text-secondary);
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    li strong {
+      color: var(--text);
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+      font-size: 13px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      color: var(--primary);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    /* Footer */
+    .footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 36px 0 48px 0;
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .footer-nav {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-nav a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .footer-nav a:hover {
+      color: var(--text);
+    }
+
+    /* Multi-language view container */
+    .lang-view {
+      display: none;
+    }
+
+    .lang-view.active {
+      display: block;
+    }
+
+    @media (max-width: 860px) {
+      .doc-wrap {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 36px 16px 64px 16px;
+      }
+      .doc-sidebar {
+        position: static;
+      }
+      .doc-title {
+        font-size: 30px;
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="nav">
+    <div class="nav-container">
+      <a href="index.html" class="brand">
+        <img src="transparent_with_arc.png" onerror="if(!this.dataset.err){this.dataset.err=1;this.src='logo.png';}else if(this.dataset.err==1){this.dataset.err=2;this.src='favicon.png';}" alt="HydroGrow" class="brand-logo">
+        <span class="brand-title">HydroGrow</span>
+      </a>
+
+      <div class="nav-right">
+        <nav class="nav-links">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="privacy.html" class="nav-link">Privacy Policy</a>
+          <a href="deletion.html" class="nav-link active">Data Deletion</a>
+          <a href="terms.html" class="nav-link">Terms (EULA)</a>
+        </nav>
+
+        <div class="lang-switcher">
+          <button class="lang-btn active" onclick="switchLang('en')">EN</button>
+          <button class="lang-btn" onclick="switchLang('cs')">CS</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ENGLISH VERSION -->
+  <div id="view-en" class="lang-view active">
+    <div class="doc-wrap">
+
+      <!-- Sticky Document Navigation Sidebar -->
+      <aside class="doc-sidebar">
+        <div class="sidebar-meta">
+          <h4>Data Deletion</h4>
+          <p>Package: <code>com.h3dapps.hydrogrow</code><br>User Data Control</p>
+        </div>
+        <nav class="sidebar-toc">
+          <a href="#offline-notice" class="toc-anchor">1. Zero Server Storage</a>
+          <a href="#factory-reset" class="toc-anchor">2. In-App Factory Reset</a>
+          <a href="#drive-cleanup" class="toc-anchor">3. Google Drive Removal</a>
+        </nav>
+      </aside>
+
+      <!-- Main Document Content -->
+      <main class="doc-body">
+        <header class="doc-header">
+          <h1 class="doc-title">Data &amp; Account Deletion Instructions</h1>
+          <p class="doc-lead">
+            Step-by-step guidance on how to delete all personal, sensor, and cultivation data for HydroGrow.
+          </p>
+        </header>
+
+        <section id="offline-notice" class="doc-section">
+          <h2>1. Offline-First Zero Server Storage Notice</h2>
+          <p>
+            HydroGrow operates on an <strong>Offline-First architecture</strong>. The Application has <strong>no centralized user accounts, no login servers, and no remote databases</strong> holding your personal information.
+          </p>
+          <p>
+            Because all your data exists solely on your local device (in the app's sandboxed SQLite database) and optionally in your own personal Google Drive, you have direct, instantaneous control over deleting 100% of your data at any time without waiting for developer approval.
+          </p>
+        </section>
+
+        <section id="factory-reset" class="doc-section">
+          <h2>2. Option 1: Complete In-App Factory Reset</h2>
+          <p>To permanently and irrevocably erase all data from your device:</p>
+          <ol>
+            <li>Open the <strong>HydroGrow</strong> app on your Android device.</li>
+            <li>Tap the <strong>Settings</strong> tab (gear icon in the bottom navigation bar).</li>
+            <li>Scroll down to the <strong>Danger Zone</strong> section.</li>
+            <li>Tap <strong>Factory Reset</strong>.</li>
+            <li>Confirm the permanent reset.</li>
+          </ol>
+          <p>
+            <strong>What is deleted:</strong> All plant cycles, reservoir logs (pH, EC, water levels), notes, photos, custom nutrient recipes, calibration lab data, and application preferences are immediately and permanently removed from device storage.
+          </p>
+        </section>
+
+        <section id="drive-cleanup" class="doc-section">
+          <h2>3. Option 2: Delete Google Drive Cloud Backups</h2>
+          <p>If you used the optional Google Drive backup feature, you can delete your backup archives at any time:</p>
+          <ol>
+            <li>Open <strong>Google Drive</strong> on your mobile device or at <a href="https://drive.google.com" target="_blank" rel="noopener" style="color: var(--primary);">drive.google.com</a>.</li>
+            <li>Locate the <code>HydroGrow Backups</code> folder.</li>
+            <li>Select and delete all <code>.hydro</code> backup files or delete the entire folder.</li>
+            <li>Empty your Google Drive Trash to permanently purge the files.</li>
+            <li>In the HydroGrow app, open the <strong>Backup Center</strong> and tap <strong>Disconnect Google Drive</strong> to remove OAuth access tokens.</li>
+          </ol>
+        </section>
+      </main>
+
+    </div>
+  </div>
+
+  <!-- CZECH VERSION -->
+  <div id="view-cs" class="lang-view">
+    <div class="doc-wrap">
+
+      <!-- Sticky Document Navigation Sidebar CS -->
+      <aside class="doc-sidebar">
+        <div class="sidebar-meta">
+          <h4>Smazání dat</h4>
+          <p>Balíček: <code>com.h3dapps.hydrogrow</code><br>Plná kontrola uživatele</p>
+        </div>
+        <nav class="sidebar-toc">
+          <a href="#offline-notice-cs" class="toc-anchor">1. Architektura bez serverů</a>
+          <a href="#factory-reset-cs" class="toc-anchor">2. Tovární reset v aplikaci</a>
+          <a href="#drive-cleanup-cs" class="toc-anchor">3. Smazání z Google Disku</a>
+        </nav>
+      </aside>
+
+      <!-- Main Document Content CS -->
+      <main class="doc-body">
+        <header class="doc-header">
+          <h1 class="doc-title">Pokyny pro smazání dat a účtu</h1>
+          <p class="doc-lead">
+            Návod krok za krokem, jak trvale odstranit veškerá pěstitelská, senzorová a aplikační data pro aplikaci HydroGrow.
+          </p>
+        </header>
+
+        <section id="offline-notice-cs" class="doc-section">
+          <h2>1. Upozornění: 100% Offline-First architektura bez serverů</h2>
+          <p>
+            Aplikace HydroGrow funguje na striktní <strong>Offline-First architektuře</strong>. Aplikace <strong>nemá žádné centrální uživatelské účty, žádné přihlašovací servery ani vzdálené databáze</strong> shromažďující vaše osobní údaje.
+          </p>
+          <p>
+            Všechna data existují výhradně na vašem lokálním zařízení (v zabezpečeném sandboxu SQLite databáze) a volitelně na vašem soukromém Google Disku. Máte tak okamžitou a přímou kontrolu nad 100 % svých dat kdykoliv, aniž byste museli čekat na vyřízení žádosti vývojářem.
+          </p>
+        </section>
+
+        <section id="factory-reset-cs" class="doc-section">
+          <h2>2. Možnost 1: Úplný tovární reset v aplikaci</h2>
+          <p>Pro trvalé a nevratné vymazání všech dat z vašeho telefonu:</p>
+          <ol>
+            <li>Otevřete aplikaci <strong>HydroGrow</strong> na svém Android zařízení.</li>
+            <li>Přejděte do záložky <strong>Nastavení</strong> (ikona ozubeného kola ve spodní liště).</li>
+            <li>Sjeďte dolů k sekci <strong>Nebezpečná zóna</strong>.</li>
+            <li>Klepněte na <strong>Tovární reset</strong>.</li>
+            <li>Potvrďte trvalé smazání v dialogu.</li>
+          </ol>
+          <p>
+            <strong>Co se smaže:</strong> Všechny pěstební cykly, záznamy měření nádrže (pH, EC, hladina vody), poznámky, fotografie, vlastní receptury živin, kalibrace a uživatelská nastavení jsou okamžitě a nevratně odstraněny z úložiště zařízení.
+          </p>
+        </section>
+
+        <section id="drive-cleanup-cs" class="doc-section">
+          <h2>3. Možnost 2: Smazání záloh z Google Disku</h2>
+          <p>Pokud jste využívali volitelnou zálohu na Google Disk, můžete své archivy kdykoliv smazat:</p>
+          <ol>
+            <li>Otevřete aplikaci <strong>Google Disk</strong> v telefonu nebo na adrese <a href="https://drive.google.com" target="_blank" rel="noopener" style="color: var(--primary);">drive.google.com</a>.</li>
+            <li>Vyhledejte složku <code>HydroGrow Backups</code>.</li>
+            <li>Označte a smažte všechny záložní soubory <code>.hydro</code> nebo celou tuto složku.</li>
+            <li>Vysypte koš na Disku Google pro trvalé odstranění.</li>
+            <li>V aplikaci HydroGrow otevřete <strong>Centrum zálohování</strong> a klepněte na <strong>Odpojit Google Disk</strong> pro zrušení uložených tokenů.</li>
+          </ol>
+        </section>
+      </main>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="nav-container" style="flex-direction: column; gap: 14px;">
+      <div class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="deletion.html">Data Deletion</a>
+        <a href="terms.html">Terms (EULA)</a>
+        <a href="https://play.google.com/store/apps/details?id=com.h3dapps.hydrogrow" target="_blank" rel="noopener">Google Play Store</a>
+      </div>
+      <p>&copy; 2026 H3DApps / Jiří Herman. All rights reserved.</p>
+      <p style="font-size: 11px; color: var(--text-muted);">Package: <code>com.h3dapps.hydrogrow</code></p>
+    </div>
+  </footer>
+
+  <script>
+    function switchLang(lang) {
+      document.querySelectorAll('.lang-view').forEach(function(el) {
+        el.classList.remove('active');
+      });
+      document.querySelectorAll('.lang-btn').forEach(function(btn) {
+        btn.classList.remove('active');
+      });
+
+      var target = document.getElementById('view-' + lang);
+      if (target) {
+        target.classList.add('active');
+        document.documentElement.lang = lang;
+      }
+
+      var activeBtn = Array.from(document.querySelectorAll('.lang-btn')).find(function(b) {
+        return b.textContent.trim().toLowerCase() === lang.toLowerCase();
+      });
+      if (activeBtn) {
+        activeBtn.classList.add('active');
+      }
+
+      try {
+        localStorage.setItem('hydrogrow_web_lang', lang);
+      } catch (e) {}
+    }
+
+    (function() {
+      try {
+        var saved = localStorage.getItem('hydrogrow_web_lang');
+        if (saved && (saved === 'en' || saved === 'cs')) {
+          switchLang(saved);
+        }
+      } catch (e) {}
+    })();
+  </script>
+</body>
+</html>

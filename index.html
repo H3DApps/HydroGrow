@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="gKRiPti4PTMrZ6z9t9xqRK4ANlUbmuDYFeeg3snKhZE" />
+  <meta name="description" content="HydroGrow - Smart Hydroponics Manager & Predictive Nutrient Engine. Offline-first cultivation assistant for Kratky, DWC, NFT, and Ebb & Flow systems.">
+  <title>HydroGrow - Smart Hydroponics Manager &amp; Predictive Nutrient Engine</title>
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon.png?v=2" />
+  <link rel="shortcut icon" href="favicon.png?v=2" />
+  <link rel="apple-touch-icon" href="transparent_with_arc.png" />
+  <style>
+    :root {
+      --bg: #0B1120;
+      --card-bg: #151F32;
+      --card-elevated: #1E293B;
+      --border: #243248;
+      --border-subtle: #1B2639;
+      --primary: #22C55E;
+      --primary-hover: #16A34A;
+      --text: #F8FAFC;
+      --text-secondary: #94A3B8;
+      --text-muted: #64748B;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+      --radius-phone: 34px;
+      --radius-pill: 9999px;
+      color-scheme: dark;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Navigation */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(11, 17, 32, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .nav-container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .brand-logo {
+      width: 34px;
+      height: 34px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .brand-title {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.4px;
+      color: var(--text);
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-link {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--text);
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-pill);
+      padding: 2px;
+      gap: 2px;
+    }
+
+    .lang-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .lang-btn.active {
+      background: var(--primary);
+      color: #070D18;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 64px 0 80px 0;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .hero-text {
+      text-align: left;
+    }
+
+    .hero-verbs {
+      font-size: 52px;
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      color: var(--text);
+      margin-bottom: 22px;
+    }
+
+    .hero-verbs span {
+      display: block;
+      color: var(--primary);
+    }
+
+    .hero-desc {
+      font-size: 17px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin-bottom: 32px;
+      max-width: 540px;
+    }
+
+    .store-cta-group {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .btn-play {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--primary);
+      color: #070D18;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 13px 24px;
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      transition: background-color 0.15s ease;
+    }
+
+    .btn-play:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-policy {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--card-bg);
+      color: var(--text);
+      border: 1px solid var(--border);
+      font-weight: 600;
+      font-size: 14px;
+      padding: 12px 20px;
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      transition: border-color 0.15s ease, background 0.15s ease;
+    }
+
+    .btn-policy:hover {
+      border-color: var(--text-secondary);
+      background: var(--card-elevated);
+    }
+
+    .hero-badges-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 13px;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+    }
+
+    .hero-badge-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero-bullet {
+      width: 4px;
+      height: 4px;
+      border-radius: var(--radius-pill);
+      background: var(--text-muted);
+    }
+
+    /* Device Frame */
+    .phone-showcase {
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+
+    .phone-device {
+      width: 280px;
+      background: #0B1120;
+      border: 8px solid #1E293B;
+      border-radius: var(--radius-phone);
+      box-shadow: 0 24px 60px -12px rgba(0, 0, 0, 0.7);
+      overflow: hidden;
+      display: block;
+      position: relative;
+    }
+
+    .phone-device img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Feature Showcase */
+    .feature-showcase-section {
+      padding: 88px 0;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .showcase-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      margin-bottom: 96px;
+    }
+
+    .showcase-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .showcase-row.reverse {
+      direction: rtl;
+    }
+
+    .showcase-row.reverse > * {
+      direction: ltr;
+    }
+
+    .showcase-content h2 {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -0.8px;
+      line-height: 1.25;
+      color: var(--text);
+      margin-bottom: 18px;
+    }
+
+    .showcase-content p {
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin-bottom: 20px;
+    }
+
+    .showcase-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .showcase-bullet {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      font-size: 15px;
+      color: var(--text-secondary);
+    }
+
+    .showcase-bullet strong {
+      color: var(--text);
+    }
+
+    .check-icon {
+      color: var(--primary);
+      font-weight: 800;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    /* Secondary Features */
+    .secondary-section {
+      padding: 72px 0;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .secondary-header {
+      text-align: left;
+      margin-bottom: 36px;
+    }
+
+    .secondary-header h2 {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.6px;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .secondary-header p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      max-width: 640px;
+    }
+
+    .secondary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .secondary-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .secondary-card h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .secondary-card p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Compliance Banner */
+    .privacy-banner-section {
+      padding: 64px 0;
+    }
+
+    .privacy-box {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    .privacy-box-text h2 {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .privacy-box-text p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      max-width: 600px;
+      line-height: 1.6;
+    }
+
+    .privacy-box-buttons {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* Footer */
+    .footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 36px 0 48px 0;
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .footer-nav {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-nav a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .footer-nav a:hover {
+      color: var(--text);
+    }
+
+    .icon-svg {
+      width: 16px;
+      height: 16px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      vertical-align: middle;
+    }
+
+    /* Language view container */
+    .lang-view {
+      display: none;
+    }
+
+    .lang-view.active {
+      display: block;
+    }
+
+    @media (max-width: 860px) {
+      .hero-grid, .showcase-row {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .showcase-row.reverse {
+        direction: ltr;
+      }
+      .hero-verbs {
+        font-size: 38px;
+      }
+      .secondary-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .phone-device {
+        width: 250px;
+      }
+      .nav-links {
+        display: none;
+      }
+      .privacy-box {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="nav">
+    <div class="nav-container">
+      <a href="index.html" class="brand">
+        <img src="transparent_with_arc.png" onerror="if(!this.dataset.err){this.dataset.err=1;this.src='logo.png';}else if(this.dataset.err==1){this.dataset.err=2;this.src='favicon.png';}" alt="HydroGrow" class="brand-logo">
+        <span class="brand-title">HydroGrow</span>
+      </a>
+
+      <div class="nav-right">
+        <nav class="nav-links">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="privacy.html" class="nav-link">Privacy Policy</a>
+          <a href="deletion.html" class="nav-link">Data Deletion</a>
+          <a href="terms.html" class="nav-link">Terms (EULA)</a>
+        </nav>
+
+        <div class="lang-switcher">
+          <button class="lang-btn active" onclick="switchLang('en')">EN</button>
+          <button class="lang-btn" onclick="switchLang('cs')">CS</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ENGLISH VERSION -->
+  <div id="view-en" class="lang-view active">
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-text">
+            <h1 class="hero-verbs">
+              Track Reservoirs.
+              <span>Dose Accurately.</span>
+              Grow Smarter.
+            </h1>
+            <p class="hero-desc">
+              HydroGrow is an offline-first hydroponics manager for Kratky, DWC, NFT, and Ebb &amp; Flow systems. Automated salt dynamics tracking, exact DO PLNA deficit dosing, and 7-state biological solution health diagnostics.
+            </p>
+            <div class="store-cta-group">
+              <a href="https://play.google.com/store/apps/details?id=com.h3dapps.hydrogrow" class="btn-play" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" style="flex-shrink:0;">
+                  <path d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594zM1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924zm12.207 10.065l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.179l11.04 10.973zm0 2.067l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z"/>
+                </svg>
+                Get it on Google Play
+              </a>
+              <a href="privacy.html" class="btn-policy">
+                Privacy Policy &amp; Safety
+              </a>
+            </div>
+            <div class="hero-badges-row">
+              <span class="hero-badge-item">100% Offline-First</span>
+              <span class="hero-bullet"></span>
+              <span class="hero-badge-item">Zero Telemetry</span>
+              <span class="hero-bullet"></span>
+              <span class="hero-badge-item">Google Play Verified</span>
+            </div>
+          </div>
+
+          <div class="phone-showcase">
+            <div class="phone-device">
+              <img src="img/en/dashboard.png" alt="HydroGrow Dashboard Interface">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Alternating Showcase 1: Predictive Nutrient Engine -->
+    <section class="feature-showcase-section">
+      <div class="container">
+
+        <div class="showcase-row">
+          <div class="showcase-content">
+            <h2>Predictive Nutrient Engine &amp; DO PLNA Deficit Dosing</h2>
+            <p>
+              Plants drink water faster than mineral salts in warm conditions. Blindly topping up with standard formulas burns roots and spikes EC.
+            </p>
+            <ul class="showcase-bullets">
+              <li class="showcase-bullet">
+                <span class="check-icon">&#10003;</span>
+                <span><strong>DO PLNA Target Lock:</strong> Calculates the exact water and mineral deficit to bring your tank back to target capacity.</span>
+              </li>
+              <li class="showcase-bullet">
+                <span class="check-icon">&#10003;</span>
+                <span><strong>Multi-Part Formulas:</strong> Exact ml/L calculations for Part A, Part B, Part C, and pH Down correctors.</span>
+              </li>
+              <li class="showcase-bullet">
+                <span class="check-icon">&#10003;</span>
+                <span><strong>Adaptive Ratios:</strong> Automatically adjusts fertilizer concentration based on actual transpiration dynamics.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="phone-showcase">
+            <div class="phone-device">
+              <img src="img/en/calculator.png" alt="HydroGrow Nutrient Calculator">
+            </div>
+          </div>
+        </div>
+
+        <!-- Alternating Showcase 2: 7-State Biological Diagnostics -->
+        <div class="showcase-row reverse">
+          <div class="showcase-content">
+            <h2>7-State Solution Health Diagnostics</h2>
+            <p>
+              HydroGrow evaluates EC and pH trajectories in real time, detecting biological imbalances in your reservoir before your plants show visible deficiency or stress symptoms.
+            </p>
+            <ul class="showcase-bullets">
+              <li class="showcase-bullet">
+                <span class="check-icon">&#10003;</span>
+                <span><strong>Sweet Spot:</strong> Confirms optimal water and mineral uptake equilibrium.</span>
+              </li>
+              <li class="showcase-bullet">
+                <span class="check-icon">&#10003;</span>
+                <span><strong>Overconcentration &amp; Hunger:</strong> Distinguishes transpiration water loss from hungry vegetative depletion.</span>
+              </li>
+              <li class="showcase-bullet">
+                <span class="check-icon">&#10003;</span>
+                <span><strong>Root Zone Stress:</strong> Early detection of Pythium risk, root suffocation, or alkaline drift.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="phone-showcase">
+            <div class="phone-device">
+              <img src="img/en/diagnostics.png" alt="HydroGrow Solution Health and Detail">
+            </div>
+          </div>
+        </div>
+
+        <!-- Alternating Showcase 3: Continuous History Graphs -->
+        <div class="showcase-row">
+          <div class="showcase-content">
+            <h2>Continuous Cultivation History &amp; Trend Corridors</h2>
+            <p>
+              Inspect multi-parameter graphs tracking pH, EC, water levels, and reservoir temperatures throughout your crop's complete growth cycle.
+            </p>
+            <ul class="showcase-bullets">
+              <li class="showcase-bullet">
+                <span class="check-icon">&#10003;</span>
+                <span><strong>Safe Tolerance Corridors:</strong> Visual upper and lower target corridors for each plant stage.</span>
+              </li>
+              <li class="showcase-bullet">
+                <span class="check-icon">&#10003;</span>
+                <span><strong>Interactive Tooltips:</strong> Tap any historical point to inspect past measurements and top-up recipes.</span>
+              </li>
+              <li class="showcase-bullet">
+                <span class="check-icon">&#10003;</span>
+                <span><strong>Long-Term Analytics:</strong> Learn your system's biological rhythm over 30, 60, or 90 days.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="phone-showcase">
+            <div class="phone-device">
+              <img src="img/en/analytics.png" alt="HydroGrow Analytics Graphs">
+            </div>
+          </div>
+        </div>
+
+        <!-- Alternating Showcase 4: Grow Journal -->
+        <div class="showcase-row reverse">
+          <div class="showcase-content">
+            <h2>Grow Journal &amp; Visual Root Inspection</h2>
+            <p>
+              Track root growth, reservoir flushes, and harvest yields with high-resolution photo logs and detailed cultivation records.
+            </p>
+            <ul class="showcase-bullets">
+              <li class="showcase-bullet">
+                <span class="check-icon">&#10003;</span>
+                <span><strong>Photo Records:</strong> Document root development, leaf color, and flowering progression.</span>
+              </li>
+              <li class="showcase-bullet">
+                <span class="check-icon">&#10003;</span>
+                <span><strong>Flush Reminders:</strong> Automated water change countdowns based on your system type.</span>
+              </li>
+              <li class="showcase-bullet">
+                <span class="check-icon">&#10003;</span>
+                <span><strong>Local Storage:</strong> Photos remain securely stored on your device storage.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="phone-showcase">
+            <div class="phone-device">
+              <img src="img/en/journal.png" alt="HydroGrow Journal">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Foundational Architecture: 3 Secondary Pillars -->
+    <section class="secondary-section">
+      <div class="container">
+        <div class="secondary-header">
+          <h2>Private. Offline. Built for Real Growers.</h2>
+          <p>Zero cloud dependency, zero trackers, and total freedom over your cultivation data.</p>
+        </div>
+
+        <div class="secondary-grid">
+          <div class="secondary-card">
+            <h3>100% Offline SQLite</h3>
+            <p>
+              All reservoir readings, plant notes, root inspection photos, and recipes are stored strictly in the private, sandboxed SQLite database on your local device.
+            </p>
+          </div>
+
+          <div class="secondary-card">
+            <h3>Restricted Google Drive Sync</h3>
+            <p>
+              User-initiated encrypted backup using restricted drive.file scope. HydroGrow only accesses its dedicated HydroGrow Backups folder and has zero access to personal files.
+            </p>
+          </div>
+
+          <div class="secondary-card">
+            <h3>Clean Slate &amp; Custom Profiles</h3>
+            <p>
+              Zero preloaded bloatware. You have complete freedom to define your own crop varieties, reservoir capacities, and stage-specific EC/pH target corridors.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Compliance Banner -->
+    <section class="privacy-banner-section">
+      <div class="container">
+        <div class="privacy-box">
+          <div class="privacy-box-text">
+            <h2>Privacy Policy &amp; Data Safety Disclosures</h2>
+            <p>
+              HydroGrow operates strictly offline without user profiling, tracking cookies, advertising SDKs, or background servers. Review our Google Play Data Safety documentation:
+            </p>
+          </div>
+          <div class="privacy-box-buttons">
+            <a href="privacy.html" class="btn-play">Privacy Policy</a>
+            <a href="deletion.html" class="btn-policy">Data Deletion</a>
+            <a href="terms.html" class="btn-policy">Terms (EULA)</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- CZECH VERSION -->
+  <div id="view-cs" class="lang-view">
+
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-text">
+            <h1 class="hero-verbs">
+              Sledujte nádrž.
+              <span>Dávkujte přesně.</span>
+              Pěstujte chytře.
+            </h1>
+            <p class="hero-desc">
+              HydroGrow je offline asistent pro pěstování v hydroponických systémech Kratky, DWC, NFT i Ebb &amp; Flow. Přesné sledování dynamiky solí, automatický výpočet deficitu DO PLNA a 7 stavů biologické diagnostiky roztoku.
+            </p>
+            <div class="store-cta-group">
+              <a href="https://play.google.com/store/apps/details?id=com.h3dapps.hydrogrow" class="btn-play" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" style="flex-shrink:0;">
+                  <path d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594zM1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924zm12.207 10.065l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.179l11.04 10.973zm0 2.067l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z"/>
+                </svg>
+                Stáhnout na Google Play
+              </a>
+              <a href="privacy.html" class="btn-policy">
+                Zásady ochrany soukromí
+              </a>
+            </div>
+            <div class="hero-badges-row">
+              <span class="hero-badge-item">100% Offline-First</span>
+              <span class="hero-bullet"></span>
+              <span class="hero-badge-item">Nulová telemetrie</span>
+              <span class="hero-bullet"></span>
+              <span class="hero-badge-item">Ověřeno pro Google Play</span>
+            </div>
+          </div>
+
+          <div class="phone-showcase">
+            <div class="phone-device">
+              <img src="img/cs/dashboard.png" alt="HydroGrow Dashboard Rozhraní">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Alternating Showcase CS -->
+    <section class="feature-showcase-section">
+      <div class="container">
+
+        <div class="showcase-row">
+          <div class="showcase-content">
+            <h2>Prediktivní kalkulátor živin &amp; Režim DO PLNA</h2>
+            <p>
+              Rostliny pijí vodu rychleji než minerální soli v teplém prostředí. Dolití nádrže plnou dávkou běžného hnojiva spálí kořeny a vystřelí EC.
+            </p>
+            <ul class="showcase-bullets">
+              <li class="showcase-bullet">
+                <span class="check-icon">&#10003;</span>
+                <span><strong>Target Lock (DO PLNA):</strong> Vypočítá přesný objem vody a minerální deficit pro doplnění nádrže na cílový objem.</span>
+              </li>
+              <li class="showcase-bullet">
+                <span class="check-icon">&#10003;</span>
+                <span><strong>Vícesložková hnojiva:</strong> Přesné ml/L dávkování složek A, B, C a pH Down korektoru.</span>
+              </li>
+              <li class="showcase-bullet">
+                <span class="check-icon">&#10003;</span>
+                <span><strong>Adaptivní poměry:</strong> Automaticky upravuje koncentraci hnojiva podle reálného odparu vody.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="phone-showcase">
+            <div class="phone-device">
+              <img src="img/cs/calculator.png" alt="HydroGrow Kalkulátor živin">
+            </div>
+          </div>
+        </div>
+
+        <div class="showcase-row reverse">
+          <div class="showcase-content">
+            <h2>7 stavů biologické diagnostiky roztoku</h2>
+            <p>
+              HydroGrow vyhodnocuje trajektorie EC a pH v reálném čase a odhalí biologickou nerovnováhu v nádrži dříve, než rostliny projeví viditelné příznaky nedostatku či stresu.
+            </p>
+            <ul class="showcase-bullets">
+              <li class="showcase-bullet">
+                <span class="check-icon">&#10003;</span>
+                <span><strong>Sweet Spot:</strong> Potvrzuje optimální rovnováhu příjmu vody a minerálních solí.</span>
+              </li>
+              <li class="showcase-bullet">
+                <span class="check-icon">&#10003;</span>
+                <span><strong>Přesolení a hladovění:</strong> Rozlišuje úbytek vody odparem od skutečného vyčerpání živin.</span>
+              </li>
+              <li class="showcase-bullet">
+                <span class="check-icon">&#10003;</span>
+                <span><strong>Stres kořenové zóny:</strong> Včasné varování před rizikem hniloby kořenů nebo alkalickým driftem.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="phone-showcase">
+            <div class="phone-device">
+              <img src="img/cs/diagnostics.png" alt="HydroGrow Diagnostika a detail">
+            </div>
+          </div>
+        </div>
+
+        <div class="showcase-row">
+          <div class="showcase-content">
+            <h2>Grafy a koridory za celý pěstební cyklus</h2>
+            <p>
+              Prohlížejte si vývoj pH, EC, hladiny vody a teplot v přehledných koridorech po celou dobu životního cyklu vaší plodiny.
+            </p>
+            <ul class="showcase-bullets">
+              <li class="showcase-bullet">
+                <span class="check-icon">&#10003;</span>
+                <span><strong>Bezpečné koridory:</strong> Vizuální zobrazení horního a dolního optimálního pásma pro každou fázi růstu.</span>
+              </li>
+              <li class="showcase-bullet">
+                <span class="check-icon">&#10003;</span>
+                <span><strong>Interaktivní tooltipy:</strong> Klepnutím na libovolný bod měření zobrazíte detailní rozpis hodnot a receptury.</span>
+              </li>
+              <li class="showcase-bullet">
+                <span class="check-icon">&#10003;</span>
+                <span><strong>Dlouhodobý přehled:</strong> Sledujte biologický rytmus svého systému za 30, 60 i 90 dní.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="phone-showcase">
+            <div class="phone-device">
+              <img src="img/cs/analytics.png" alt="HydroGrow Analytické grafy">
+            </div>
+          </div>
+        </div>
+
+        <div class="showcase-row reverse">
+          <div class="showcase-content">
+            <h2>Pěstitelský deník a záznamy</h2>
+            <p>
+              Zaznamenávejte vývoj kořenů, proplachy nádrže a sklizeň pomocí fotodokumentace ve vysokém rozlišení a podrobných pěstitelských zápisků.
+            </p>
+            <ul class="showcase-bullets">
+              <li class="showcase-bullet">
+                <span class="check-icon">&#10003;</span>
+                <span><strong>Fotodokumentace:</strong> Zachyťte vývoj kořenového systému, barvu listů i tvorbu květů a plodů.</span>
+              </li>
+              <li class="showcase-bullet">
+                <span class="check-icon">&#10003;</span>
+                <span><strong>Upozornění na výměnu:</strong> Automatický odpočet do výměny roztoku podle vašeho typu systému.</span>
+              </li>
+              <li class="showcase-bullet">
+                <span class="check-icon">&#10003;</span>
+                <span><strong>Lokální úložiště:</strong> Fotografie zůstávají bezpečně uloženy v paměti vašeho telefonu.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="phone-showcase">
+            <div class="phone-device">
+              <img src="img/cs/journal.png" alt="HydroGrow Pěstitelský deník">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Secondary CS -->
+    <section class="secondary-section">
+      <div class="container">
+        <div class="secondary-header">
+          <h2>Bezpečné. Offline. Vyvinuto pro pěstitele.</h2>
+          <p>Nulová závislost na cloudu, žádné trackery a plná kontrola nad vašimi pěstitelskými daty.</p>
+        </div>
+
+        <div class="secondary-grid">
+          <div class="secondary-card">
+            <h3>100% Offline SQLite</h3>
+            <p>
+              Všechna data měření, deníky, fotografie kořenů i receptury jsou uloženy výhradně v interní SQLite databázi ve vašem telefonu.
+            </p>
+          </div>
+
+          <div class="secondary-card">
+            <h3>Volitelná záloha na Google Disk</h3>
+            <p>
+              Přímé šifrované zálohování s restriktivním rozsahem drive.file. Aplikace má přístup výhradně do vlastní složky HydroGrow Backups.
+            </p>
+          </div>
+
+          <div class="secondary-card">
+            <h3>Čistý start po instalaci</h3>
+            <p>
+              Žádná vnucená data. Máte naprostou svobodu si nastavit vlastní rostliny, objemy nádrží i specifické koridory EC a pH.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Compliance Banner CS -->
+    <section class="privacy-banner-section">
+      <div class="container">
+        <div class="privacy-box">
+          <div class="privacy-box-text">
+            <h2>Bezpečnost dat &amp; Zásady ochrany soukromí</h2>
+            <p>
+              HydroGrow funguje bez sledování uživatelů, telemetrie a serverů. Seznamte se s dokumentací bezpečnosti dat pro Google Play:
+            </p>
+          </div>
+          <div class="privacy-box-buttons">
+            <a href="privacy.html" class="btn-play">Zásady soukromí</a>
+            <a href="deletion.html" class="btn-policy">Smazání dat</a>
+            <a href="terms.html" class="btn-policy">Podmínky (EULA)</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="deletion.html">Data Deletion</a>
+        <a href="terms.html">Terms (EULA)</a>
+        <a href="https://play.google.com/store/apps/details?id=com.h3dapps.hydrogrow" target="_blank" rel="noopener">Google Play Store</a>
+      </div>
+      <p>&copy; 2026 H3DApps / Jiří Herman. All rights reserved.</p>
+      <p style="font-size: 11px; margin-top: 4px; color: var(--text-muted);">Package: <code>com.h3dapps.hydrogrow</code></p>
+    </div>
+  </footer>
+
+  <script>
+    function switchLang(lang) {
+      document.querySelectorAll('.lang-view').forEach(function(el) {
+        el.classList.remove('active');
+      });
+      document.querySelectorAll('.lang-btn').forEach(function(btn) {
+        btn.classList.remove('active');
+      });
+
+      var target = document.getElementById('view-' + lang);
+      if (target) {
+        target.classList.add('active');
+        document.documentElement.lang = lang;
+      }
+
+      var activeBtn = Array.from(document.querySelectorAll('.lang-btn')).find(function(b) {
+        return b.textContent.trim().toLowerCase() === lang.toLowerCase();
+      });
+      if (activeBtn) {
+        activeBtn.classList.add('active');
+      }
+
+      try {
+        localStorage.setItem('hydrogrow_web_lang', lang);
+      } catch (e) {}
+    }
+
+    (function() {
+      try {
+        var saved = localStorage.getItem('hydrogrow_web_lang');
+        if (saved && (saved === 'en' || saved === 'cs')) {
+          switchLang(saved);
+        }
+      } catch (e) {}
+    })();
+  </script>
+</body>
+</html>
